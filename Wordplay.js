@@ -110,6 +110,7 @@ console.log(noVowel(allTxt));
     }
     console.log(allVowel(allTxt));
 
+//  What are all of the words that have the letters 'A,E,I,O,U' in alphabetical order?
 function AEIOU(input) {
     let vowels = [];
     let alphabetical = [];
