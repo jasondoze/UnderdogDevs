@@ -133,13 +133,14 @@ console.log(AEIOU(allTxt));
 // Setting up storage to use during a for loop, including counters and arrays
 // How many words contain the substring "TYPE”?
 function subType(input) {
-    var typeArr = [];
-    for (var i = 0; i < input.length; i++) {
+    let count = 0;
+    let typeArr = [];
+    for (let i = 0; i < input.length; i++) {
         if (input[i].includes("TYPE")) {
-            typeArr.push(input[i]);
+            count++;
         }
     }
-    return typeArr;
+    return count;
 }
 console.log(subType(allTxt));
 
