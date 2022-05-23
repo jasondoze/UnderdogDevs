@@ -110,17 +110,24 @@ console.log(noVowel(allTxt));
     }
     console.log(allVowel(allTxt));
 
-// What are all of the words that have all 5 vowels, in alphabetical order?
-    function alphaVowel(input) {
-        var alphaVowel= [];
-        for (var i = 0; i < input.length; i++) {
-            if (input[i].includes("A") && input[i].includes("E") && input[i].includes("I") && input[i].includes("O") && input[i].includes("U")) {
-                alphaVowel.push(input[i]);
-            }
+function AEIOU(input) {
+    let vowels = [];
+    let alphabetical = [];
+    for (let i = 0; i < input.length; i++) {
+        if (input[i].includes('A') && input[i].includes('E') && input[i].includes('I') && input[i].includes('O') && input[i].includes('U')) {
+            vowels.push(input[i]);
+            // console.log(vowels);
         }
-        return alphaVowel.sort();
     }
-    console.log(alphaVowel(allTxt));
+    // check to see if the letter A comes before the letter E in the word, and the E comes before the I and the I comes before the O and the O comes before the U
+    for (let i = 0; i < vowels.length; i++) {
+        if (vowels[i].indexOf('A') < vowels[i].indexOf('E') && vowels[i].indexOf('E') < vowels[i].indexOf('I') && vowels[i].indexOf('I') < vowels[i].indexOf('O') && vowels[i].indexOf('O') < vowels[i].indexOf('U')) {
+            alphabetical.push(vowels[i]);
+        }
+    }
+    return alphabetical;
+}
+console.log(AEIOU(allTxt));
 
 // Setting up storage to use during a for loop, including counters and arrays
 // How many words contain the substring "TYPE”?
