@@ -195,27 +195,27 @@ console.log(subType(allTxt));
     console.log(noVowel(allTxt));
 
 // Which of the letters Q, X, and Z is the least common?
-    function leastCommon(input) {
-        var leastCommon = [];
-        var leastCommonLetter = [];
-        var leastCommonLetterCount = [0];
-        for (var i = 0; i < input.length; i++) {
-            if (input[i].includes("Q")) {
-                leastCommon.push("Q");
-            } else if (input[i].includes("X")) {
-                leastCommon.push("X");
-            } else if (input[i].includes("Z")) {
-                leastCommon.push("Z");
-            }
-        }
-        for (var j = 0; j < leastCommon.length; j++) {
-            if (leastCommon.length > leastCommonLetterCount.length) {
-                leastCommonLetter = leastCommon[j];
-                return leastCommonLetter;
-            }
-        }
-    }
-    console.log(leastCommon(allTxt));
+    // function leastCommon(input) {
+    //     var leastCommon = [];
+    //     var leastCommonLetter = [];
+    //     var leastCommonLetterCount = [0];
+    //     for (var i = 0; i < input.length; i++) {
+    //         if (input[i].includes("Q")) {
+    //             leastCommon.push("Q");
+    //         } else if (input[i].includes("X")) {
+    //             leastCommon.push("X");
+    //         } else if (input[i].includes("Z")) {
+    //             leastCommon.push("Z");
+    //         }
+    //     }
+    //     for (var j = 0; j < leastCommon.length; j++) {
+    //         if (leastCommon.length > leastCommonLetterCount.length) {
+    //             leastCommonLetter = leastCommon[j];
+    //             return leastCommonLetter;
+    //         }
+    //     }
+    // }
+    // console.log(leastCommon(allTxt));
 
 
 // What is the longest palindrome?
