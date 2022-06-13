@@ -8,9 +8,7 @@ const text = fs.readFileSync("countries.txt");
 const textByLine = text.toString().toLowerCase().split("\n");
 
 //  There is at least one country name that contains another country name. Find all of these cases.
+// for example, the country name Guinea-Bissau is a country name that contains Guinea, and the Democratic Republic of the Congo is a country name that contains Republic of the Congo.
 
-function countryWithinCountry(input) {
+// write a function that can find any word that contains another word from the same text file.
 
-}
-
-console.log(countryWithinCountry(textByLine));
