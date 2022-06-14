@@ -1,3 +1,4 @@
+
 const assert = require("assert");
 const { Console, count } = require("console");
 const { captureRejections } = require("events");
@@ -7,7 +8,7 @@ const { resourceLimits } = require("worker_threads");
 const text = fs.readFileSync(
   "/Volumes/My Passport for Mac - Data/UnderDog_Devs/UnderdogDevs/countries/countries.txt"
 );
-const textByLine = text.toString().toLowerCase()
+const textByLine = text.toString().toLowerCase();
 
 // What countries use only one vowel in their name (the vowel can be used multiple times)
 // For example, if the word "BEEKEEPER" were a country, it would be an answer, because it only uses "E".
@@ -26,3 +27,5 @@ function oneVowel(text) {
   return oneVowelCountries;
 }
 console.log(oneVowel(textByLine));
+
+
