@@ -9,8 +9,6 @@ const textByLine = text.toString().toLowerCase().split("\n");
 
 //  There is at least one country name that contains another country name. Find all of these cases.
 
-function countryWithinCountry(input) {
-
-}
+function countryWithinCountry(input) {}
 
 console.log(countryWithinCountry(textByLine));

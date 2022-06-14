@@ -1,33 +1,28 @@
-
+const assert = require("assert");
+const { Console, count } = require("console");
+const { captureRejections } = require("events");
 const fs = require("fs");
-const text = fs.readFileSync("curlCountries.txt", {
-  encoding: "utf8",
-  flag: "r",
-});
+const { report } = require("process");
+const { resourceLimits } = require("worker_threads");
+const text = fs.readFileSync(
+  "/Volumes/My Passport for Mac - Data/UnderDog_Devs/UnderdogDevs/countries/countries.txt"
+);
+const textByLine = text.toString().toLowerCase()
 
 // What countries use only one vowel in their name (the vowel can be used multiple times)
 // For example, if the word "BEEKEEPER" were a country, it would be an answer, because it only uses "E".
 
-// for (const country of countryArr) {
-//   let firstVowel = undefined;
-//   let hasOneVowel = false;
-
-//   for (const letter of country) {
-//     if (vowels.includes(letter)) {
-//       if (!firstVowel) {
-//         firstVowel = letter;
-//         hasOneVowel = true;
-//       } else if (letter !== firstVowel) {
-//         hasOneVowel = false;
-//         continue;
-//       }
-//     }
-//   }
-
-//   if (hasOneVowel) {
-//     countryHasSingleVowel.push(country);
-//   }
-// }
-// console.log({ countryHasSingleVowel });
-
-
+function oneVowel(text) {
+  let countries = text.split("\n");
+  let oneVowelCountries = [];
+  for (let i = 0; i < countries.length; i++) {
+    let country = countries[i];
+    console.log(country);
+    let vowels = country.match(/[aeiou]/gi);
+    if (vowels.every((vowel) => vowel === vowels[0])) {
+      oneVowelCountries.push(country);
+    }
+  }
+  return oneVowelCountries;
+}
+console.log(oneVowel(textByLine));
