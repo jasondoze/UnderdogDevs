@@ -1,4 +1,3 @@
-
 const assert = require("assert");
 const { Console, count } = require("console");
 const { captureRejections } = require("events");
@@ -20,6 +19,8 @@ function oneVowel(text) {
     let country = countries[i];
     console.log(country);
     let vowels = country.match(/[aeiou]/gi);
+    // The every() method tests whether all elements in the array pass the test
+    // implemented by the provided function. It returns a Boolean value.
     if (vowels.every((vowel) => vowel === vowels[0])) {
       oneVowelCountries.push(country);
     }
@@ -27,5 +28,3 @@ function oneVowel(text) {
   return oneVowelCountries;
 }
 console.log(oneVowel(textByLine));
-
-
