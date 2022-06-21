@@ -18,15 +18,16 @@ function getCountriesWithUnitedInName(input) {
 }
 console.log(getCountriesWithUnitedInName(textByLine));
 
-function tests() {
-  // let test_input = textByLine;
-  // let actual_test_output = getCountriesWithUnitedInName(test_input)
-  // let expected_test_output = ['botswana', 'italy', 'south korea'];
-  // assert.equal(actual_test_output.length, 3);
-  // assert.deepEqual(actual_test_output, expected_test_output, "assert failed"); // fail
-  // console.log("tests completed correctly");
+// function tests() {
+//   // let test_input = textByLine;
+//   // let actual_test_output = getCountriesWithUnitedInName(test_input)
+//   // let expected_test_output = ['botswana', 'italy', 'south korea'];
+//   // assert.equal(actual_test_output.length, 3);
+//   // assert.deepEqual(actual_test_output, expected_test_output, "assert failed"); // fail
+//   // console.log("tests completed correctly");
 
   // assert.equal(actual, expected, message)
+function tests() {
   let test_input = textByLine;
   let expected_test_output = [
     "united arab emirates",
