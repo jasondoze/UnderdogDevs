@@ -16,21 +16,18 @@ function oneVowel(countries) {
   // iterate over the array, assign country to each element
   for (let i = 0; i < countries.length; i++) {
     let country = countries[i];
-    console.log(country);
+    // console.log(country);
 
+    // change to xyz or something as a match
     let vowels = country.match(/[aeiou]/gi);
     // The every() method tests whether all elements in the array pass the test
     // implemented by the provided function. It returns a Boolean value.
-    if (vowels.every((vowel) => vowel === vowels[0])) {
+
+    // for every entry in vowels, lets call that vowel => for every vowel in vowels, does it equal to the first character in vowels
+    if (vowels.every((currChar) => currChar === vowels[0])) {
       oneVowelCountries.push(country);
     }
   }
   return oneVowelCountries;
 }
-
-// const lowerCaseText = text.toString().toLowerCase();
-// // const splitBy = "\n"; // Jason to put the right value here
-// const splitBy = "a"; // Jason to put the right value here
-
-// const allCountries = lowerCaseText.split(splitBy);
-// console.log(oneVowel(allCountries));
+console.log(oneVowel(textByLine));
