@@ -37,7 +37,7 @@ function allPairs(countries) {
   }
   return pairs;
 }
-
+// if country A === country B then that is not a country within a country
 // function countryWithinCountry(countries) {}
 console.log(allPairs(textByLine));
 

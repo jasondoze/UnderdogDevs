@@ -23,7 +23,7 @@ function oneVowel(countries) {
     // The every() method tests whether all elements in the array pass the test
     // implemented by the provided function. It returns a Boolean value.
 
-    // for every entry in vowels, lets call that vowel => for every vowel in vowels, does it equal to the first character in vowels
+    // for every entry in vowels, lets call that currChar => for currChar in vowels, does it equal to the first character in vowels
     if (vowels.every((currChar) => currChar === vowels[0])) {
       oneVowelCountries.push(country);
     }
