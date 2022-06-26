@@ -19,7 +19,7 @@ const words = text.toString().toLowerCase().split("\n");
 
 // onlyU(words);
 
-//create the same function as above but with a for each loop
+// create the same function as above but with a for each loop
 // function onlyU2(allWords) {
 //     allWords.forEach((word) => {
 //         if (
