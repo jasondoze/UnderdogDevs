@@ -16,7 +16,7 @@ What are all of the words that start with “PRO”, end in “ING”, and are e
 
 What are the shortest words that start with “PRO” and end in “ING”? Make sure your solution can handle ties. -->
 
-What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated.
+<!-- What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated. -->
 
 What is the longest word that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated. Make sure your solution can handle ties.
 
