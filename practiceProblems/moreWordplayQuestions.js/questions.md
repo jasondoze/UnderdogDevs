@@ -6,7 +6,7 @@ Before you move on to those sections, we recommend confirming that you are comfo
 
 
 Revisiting for loops, if conditions, and using lists as storage
-What are all of the words that both start with a “TH” and end with a “TH”?
+<!-- What are all of the words that both start with a “TH” and end with a “TH”?
 
 What are all of the words that have only “U”s for vowels?
 
@@ -14,7 +14,7 @@ What are all of the words that have only “E”s for vowels and are at least 15
 
 What are all of the words that start with “PRO”, end in “ING”, and are exactly 11 letters long?
 
-What are the shortest words that start with “PRO” and end in “ING”? Make sure your solution can handle ties.
+What are the shortest words that start with “PRO” and end in “ING”? Make sure your solution can handle ties. -->
 
 What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated.
 
