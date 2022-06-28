@@ -5,6 +5,7 @@ const words = text.toString().toLowerCase().split("\n");
 // What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated.
 
 function onlyRSTLNE(text) {
+  let result = [];
   // create an array of the allowed letters
   const letters = ["r", "s", "t", "l", "n", "e"];
   // iterate over the array of words
@@ -15,8 +16,9 @@ function onlyRSTLNE(text) {
     let wordArray = word.split("");
     // console.log(wordArray);
     if (wordArray.every((letter) => letters.includes(letter))) {
-      console.log(word);
+      result.push(word);
     }
   }
+  return result;
 }
-onlyRSTLNE(words);
+console.log(onlyRSTLNE(words));
