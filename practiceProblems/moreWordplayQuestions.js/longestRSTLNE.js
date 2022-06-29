@@ -23,9 +23,9 @@ function longestRSTLNE(allWords) {
   for (let j = 0; j < result.length; j++) {
     if (result[j].length > shortest.length) {
       shortest = result[j];
-      return shortest;
     }
   }
+  return shortest;
 }
 
 console.log(longestRSTLNE(words));
