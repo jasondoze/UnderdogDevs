@@ -29,5 +29,19 @@ function withLetters(allWords) {
   }
   return result;
 }
-   
+
 console.log(withLetters(words));
+
+function withLetters2(allWords) {
+  const result = [];
+  const withoutLetters = ["a", "e", "i", "o", "s", "h", "r", "t", "n"];
+  for (let i = 0; i < allWords.length; i++) {
+    let word = allWords[i];
+    let splitWord = word.split("");
+    if (splitWord.every((letter) => !withoutLetters.includes(letter))) {
+      result.push(word);
+    }
+  }
+  return result;
+}
+console.log(withLetters2(words));
