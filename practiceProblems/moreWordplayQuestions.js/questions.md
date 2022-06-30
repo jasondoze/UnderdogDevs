@@ -32,8 +32,8 @@ Write a function that takes a string `substring` as an argument and returns an a
 
 <!-- Write a function that takes a string `prefix` as the first argument, a string `suffix` as the second argument, and an integer `length` as the third argument. It should return an array of all of the words that start with that prefix, end with that suffix, and are that length. -->
 
-Write a function that takes a string `word` as an argument and returns a count of all of the “A”s in that string.
+<!-- Write a function that takes a string `word` as an argument and returns a count of all of the “A”s in that string. -->
 
-Write a function that takes a string `word` as the first argument, a string `letter` as the second argument, and returns a count of how many times `letter` occurs in `word`.
+<!-- Write a function that takes a string `word` as the first argument, a string `letter` as the second argument, and returns a count of how many times `letter` occurs in `word`. -->
 
-Write a function that takes a string `phrase` and returns a dictionary contains counts of how many times every character appears in `phrase`.
+<!-- Write a function that takes a string `phrase` and returns a dictionary contains counts of how many times every character appears in `phrase`. -->
