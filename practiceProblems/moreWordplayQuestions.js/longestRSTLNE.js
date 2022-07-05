@@ -7,7 +7,7 @@ What is the longest word that can be made from only the letters in “RSTLNE”?
 */
 
 function longestRSTLNE(allWords) {
-  let shortest = [0];
+  let longest = "";
 
   let result = [];
   const letters = ["r", "s", "t", "l", "n", "e"];
@@ -21,11 +21,11 @@ function longestRSTLNE(allWords) {
     }
   }
   for (let j = 0; j < result.length; j++) {
-    if (result[j].length > shortest.length) {
-      shortest = result[j];
+    if (result[j].length > longest.length) {
+      longest = result[j];
     }
   }
-  return shortest;
+  return longest;
 }
 
 console.log(longestRSTLNE(words));
