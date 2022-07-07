@@ -1,10 +1,6 @@
 const assert = require("assert");
-const { Console } = require("console");
-const { captureRejections } = require("events");
 const fs = require("fs");
 const { report } = require("process");
-const { resourceLimits } = require("worker_threads");
-const text = fs.readFileSync("countries.txt");
 const textByLine = text.toString().toLowerCase().split("\n");
 
 //  What countries both begin and end with a vowel?

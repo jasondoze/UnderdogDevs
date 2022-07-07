@@ -1,9 +1,5 @@
 const assert = require("assert");
-const { Console } = require("console");
-const { captureRejections } = require("events");
 const fs = require("fs");
-const { report } = require("process");
-const { resourceLimits } = require("worker_threads");
 const text = fs.readFileSync("baby_names_2020_short.txt");
 const textByLine = text.toString().toLowerCase().split("\n");
 
