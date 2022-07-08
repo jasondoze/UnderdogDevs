@@ -136,3 +136,16 @@ function testRESTLNE() {
   console.log("all tests passed");
 }
 testRESTLNE();
+
+
+//If there is no common prefix, return an empty string "".
+// I - array of strings
+// O - string
+// edge case, if no common prefix return empty string
+// create a empty longest common string variable
+// create a result array variable
+// iterate over the input array
+// iterate over each character of the string
+// for each letter that matches push the letters into the result array
+// stop at a non matching letter
+// return result array
