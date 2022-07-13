@@ -1,6 +1,5 @@
 const assert = require("assert");
 const fs = require("fs");
-const { report } = require("process");
 const textByLine = text.toString().toLowerCase().split("\n");
 
 //  What countries both begin and end with a vowel?
