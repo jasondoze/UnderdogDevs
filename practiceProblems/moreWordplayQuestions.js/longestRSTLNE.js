@@ -52,15 +52,7 @@ function longestRSTLNE(words) {
     console.log("words is an array");
   }
 
-  if (words.length === 0) {
-    return null;
-  }
-
-  if (words !== "") {
-    return null;
-  }
-
-  let longest = "";
+  let longest = null;
 
   let result = [];
   const letters = ["r", "s", "t", "l", "n", "e"];
@@ -72,19 +64,18 @@ function longestRSTLNE(words) {
     if (wordArray.every((letter) => letters.includes(letter))) {
       result.push(currWord);
     }
-    // broken
-    else if (wordArray.every((letter) => !letters.includes(letter))) {
-      return null;
-    }
   }
   for (let j = 0; j < result.length; j++) {
-    if (result[j].length > longest.length) {
-      longest = result[j];
-      // console.log(longest);
-      // console.log(typeof longest);
-    }
+    longest = best(longest, result[j]);
   }
   return longest;
+}
+
+function best(current, candidate) {
+  if (candidate.length > current.length) {
+    return candidate;
+  }
+  return current;
 }
 
 // console.log(longestRSTLNE(words));
@@ -106,17 +97,56 @@ Hint: your code already splits up parts one and two, how can you check after par
 
 Stretch homework: more tests cases, with english descriptions
 */
-function testRESTLNE() {
+
+/*
+  longestRSTLNE(stringArray) returns the longest string in stringArray which is formed only of the letters r,s,t,l,n,e 
+  longest(stringArray) returns the longest string in stringArray
+*/
+
+/*
+  if we want best() to return the best string in the context of longestRSTLNE, when current=null and candidate="r", 
+  what should we return?
+*/
+
+// fix the best function so that test best passes
+function testBest() {
+  actual = best(null, "r");
+  expected = "r";
+
+  assert.deepEqual(actual, expected);
+
+  assert.deepEqual(best("r", "rr"), "rr");
+  assert.deepEqual(best("rr", "r"), "rr");
+  assert.deepEqual(best("rs", "rl"), "rs");
+}
+
+function testRSTLNE() {
   // assert.deepEqual("", "");
   // passes although it really shouldn't
   // assert.deepEqual(longestRSTLNE(''), '');
 
-  // new tests
-  assert.deepEqual(longestRSTLNE([]), null, "wrong answer for empty array");
-  assert.deepEqual(longestRSTLNE(["x"]), null, "wrong answer for x");
-  assert.deepEqual(longestRSTLNE(["x", "y"]), null, "wrong answer for x, y");
-  assert.deepEqual(longestRSTLNE(["2"]), null, "answer for number entry");
-  assert.deepEqual(longestRSTLNE(["../", "7"]), null, "answer for other keyboard input");
+  assert.deepEqual(longestRSTLNE(["r"]), "r", "expected f(['r']) => 'r'");
+  assert.deepEqual(
+    longestRSTLNE(["r", "xa"]),
+    "r",
+    "expected f(['r', 'xa']) => 'r'"
+  );
+  assert.deepEqual(
+    longestRSTLNE(["r", "xa", "rst"]),
+    "rst",
+    "expected f(['r', 'xa', 'rst']) => 'rst'"
+  );
+
+  assert.deepEqual(longestRSTLNE([]), null, "expected f([]) = null");
+  assert.deepEqual(longestRSTLNE([""]), "", "expected f(['']) = ''");
+  assert.deepEqual(longestRSTLNE(["x"]), null, "expected f(['x']) = null");
+  assert.deepEqual(longestRSTLNE(["x", "y"]), null);
+  assert.deepEqual(longestRSTLNE(["2"]), null);
+  assert.deepEqual(
+    longestRSTLNE(["../", "7"]),
+    null,
+    "answer for other keyboard input"
+  );
 
   //
   // assert.deepEqual(
@@ -135,8 +165,8 @@ function testRESTLNE() {
 
   console.log("all tests passed");
 }
-testRESTLNE();
-
+testBest();
+testRSTLNE();
 
 //If there is no common prefix, return an empty string "".
 // I - array of strings
