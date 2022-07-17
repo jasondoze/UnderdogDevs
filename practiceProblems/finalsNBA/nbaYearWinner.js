@@ -1,7 +1,13 @@
 const fs = require('fs');
-const nbaFinalsArray = fs.readFileSync("nbaFinals.csv").toString()
+const nbaFinalsArray = fs
+  .readFileSync('nbaFinals.csv')
+  .toString()
   .toUpperCase()
-  .split("\r\n");
+  .split('\r\n');
 
 //  Write a function that takes as an argument a team name and returns an array of all of the years the team has won the NBA finals.
-console.log(nbaFinalsArray)
+
+function sooo(nbaFinals) {}
+
+console.log(nbaFinalsArray);
+console.log('jello');
