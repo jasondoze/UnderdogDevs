@@ -1,13 +1,26 @@
-const fs = require('fs');
-const nbaFinalsArray = fs
-  .readFileSync('nbaFinals.csv')
-  .toString()
-  .toUpperCase()
-  .split('\r\n');
+const nbaInfoCSV = require('csvtojson');
+nbaInfoCSV()
+  .fromFile('nbaFinals.csv')
 
-//  Write a function that takes as an argument a team name and returns an array of all of the years the team has won the NBA finals.
+  .then((stats) => {
+    // users is a JSON array
+    // log the JSON array
 
-function sooo(nbaFinals) {}
+    const yearWinner = (winner, teamName) => {
+      let winners = [];
+      for (let i = 0; i < winner.length; i++) {
+        if (teamName === winner[i].Winner) {
+          winners.push(winner[i].Year);
+        }
+      }
+      return winners;
+    };
+    console.log(yearWinner(stats, 'Boston Celtics'));
+  })
+  .catch((err) => {
+    // log error if any
+    console.log(err);
+  });
 
-console.log(nbaFinalsArray);
-console.log('jello');
+//  Write a function that takes as an argument a team name and
+// returns an array of all of the years the team has won the NBA finals.
