@@ -1,7 +1,7 @@
-const fs = require("fs");
-const text = fs.readFileSync("sowpods.txt");
-const sowpods = text.toString().toLowerCase().split("\n");
-const assert = require("assert");
+const fs = require('fs');
+const text = fs.readFileSync('sowpods.txt');
+const sowpods = text.toString().toLowerCase().split('\n');
+const assert = require('assert');
 
 /*
 What is the longest word that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated. Make sure your solution can handle ties.
@@ -49,17 +49,23 @@ Answer: False
 function longestRSTLNE(words) {
   // console.log(typeof words);
   if (Array.isArray(words)) {
-    console.log("words is an array");
+    console.log('words is an array');
   }
+  /*The value null is written with a literal: null. null is not an 
+  identifier for a property of the global object, like undefined can be. 
+  Instead, null expresses a lack of identification, indicating that
+   a variable points to no object. In APIs, null is often retrieved in a 
+   place where an object can be expected but no object is relevant.*/
 
   let longest = null;
+  // console.log(typeof null);
 
   let result = [];
-  const letters = ["r", "s", "t", "l", "n", "e"];
+  const letters = ['r', 's', 't', 'l', 'n', 'e'];
 
   for (let i = 0; i < words.length; i++) {
     let currWord = words[i];
-    let wordArray = currWord.split("");
+    let wordArray = currWord.split('');
     // for every letter in the current word, is that included in letters
     if (wordArray.every((letter) => letters.includes(letter))) {
       result.push(currWord);
@@ -71,12 +77,7 @@ function longestRSTLNE(words) {
   return longest;
 }
 
-function best(current, candidate) {
-  if (candidate.length > current.length) {
-    return candidate;
-  }
-  return current;
-}
+
 
 // console.log(longestRSTLNE(words));
 
@@ -107,17 +108,22 @@ Stretch homework: more tests cases, with english descriptions
   if we want best() to return the best string in the context of longestRSTLNE, when current=null and candidate="r", 
   what should we return?
 */
-
+function best(current, candidate) {
+  if (candidate.length > current) {
+    return candidate;
+  }
+  return current;
+}
 // fix the best function so that test best passes
 function testBest() {
-  actual = best(null, "r");
-  expected = "r";
+  actual = best(null, 'r');
+  expected = 'r';
 
   assert.deepEqual(actual, expected);
 
-  assert.deepEqual(best("r", "rr"), "rr");
-  assert.deepEqual(best("rr", "r"), "rr");
-  assert.deepEqual(best("rs", "rl"), "rs");
+  assert.deepEqual(best('r', 'rr'), 'rr');
+  assert.deepEqual(best('rr', 'r'), 'rr');
+  assert.deepEqual(best('rs', 'rl'), 'rs');
 }
 
 function testRSTLNE() {
@@ -125,27 +131,27 @@ function testRSTLNE() {
   // passes although it really shouldn't
   // assert.deepEqual(longestRSTLNE(''), '');
 
-  assert.deepEqual(longestRSTLNE(["r"]), "r", "expected f(['r']) => 'r'");
+  assert.deepEqual(longestRSTLNE(['r']), 'r', "expected f(['r']) => 'r'");
   assert.deepEqual(
-    longestRSTLNE(["r", "xa"]),
-    "r",
+    longestRSTLNE(['r', 'xa']),
+    'r',
     "expected f(['r', 'xa']) => 'r'"
   );
   assert.deepEqual(
-    longestRSTLNE(["r", "xa", "rst"]),
-    "rst",
+    longestRSTLNE(['r', 'xa', 'rst']),
+    'rst',
     "expected f(['r', 'xa', 'rst']) => 'rst'"
   );
 
-  assert.deepEqual(longestRSTLNE([]), null, "expected f([]) = null");
-  assert.deepEqual(longestRSTLNE([""]), "", "expected f(['']) = ''");
-  assert.deepEqual(longestRSTLNE(["x"]), null, "expected f(['x']) = null");
-  assert.deepEqual(longestRSTLNE(["x", "y"]), null);
-  assert.deepEqual(longestRSTLNE(["2"]), null);
+  assert.deepEqual(longestRSTLNE([]), null, 'expected f([]) = null');
+  assert.deepEqual(longestRSTLNE(['']), '', "expected f(['']) = ''");
+  assert.deepEqual(longestRSTLNE(['x']), null, "expected f(['x']) = null");
+  assert.deepEqual(longestRSTLNE(['x', 'y']), null);
+  assert.deepEqual(longestRSTLNE(['2']), null);
   assert.deepEqual(
-    longestRSTLNE(["../", "7"]),
+    longestRSTLNE(['../', '7']),
     null,
-    "answer for other keyboard input"
+    'answer for other keyboard input'
   );
 
   //
@@ -163,19 +169,9 @@ function testRSTLNE() {
   //   "letterers"
   // );
 
-  console.log("all tests passed");
+  console.log('all tests passed');
 }
 testBest();
 testRSTLNE();
 
-//If there is no common prefix, return an empty string "".
-// I - array of strings
-// O - string
-// edge case, if no common prefix return empty string
-// create a empty longest common string variable
-// create a result array variable
-// iterate over the input array
-// iterate over each character of the string
-// for each letter that matches push the letters into the result array
-// stop at a non matching letter
-// return result array
+
