@@ -46,21 +46,48 @@ Answer: False
 // for this part of the session we've decided words=[] (because we're working on test with longestRSTLNE([]))
 // this takes an array of strings and returns a string
 // if no word can be made, return null
-function longestRSTLNE(words) {
-  // console.log(typeof words);
-  if (Array.isArray(words)) {
-    console.log('words is an array');
+
+function best(current, candidate) {
+  if (current === null) {
+    return candidate;
   }
+
+  if (candidate === null) {
+    return current;
+  }
+
+  // Q: why is it okay to compare candidate.length (an integer) to current (a string, or null)
+  // A: doing some research, this was just left in research states
+  if (candidate.length > current.length) {
+    return candidate;
+  }
+  return current;
+}
+
+function isGoodWord(word) {
+  const letters = ['r', 's', 't', 'l', 'n', 'e'];
+  let wordArray = word.split('');
+  // for every letter in the current word, is that included in letters
+  return wordArray.every((letter) => letters.includes(letter));
+}
+
+function longestRSTLNE(words) {
+  // filters words for just those made of LSTRNE
+  filtered = words.filter(word => isGoodWord(word));
+  // chooses the longest word of filtered words
+  return filtered.reduce((a, b) => best(a, b), null);
+}
+
+function longestRSTLNE2(words) {
   /*The value null is written with a literal: null. null is not an 
   identifier for a property of the global object, like undefined can be. 
   Instead, null expresses a lack of identification, indicating that
    a variable points to no object. In APIs, null is often retrieved in a 
    place where an object can be expected but no object is relevant.*/
 
-  let longest = null;
   // console.log(typeof null);
 
-  let result = [];
+  let filtered = [];
   const letters = ['r', 's', 't', 'l', 'n', 'e'];
 
   for (let i = 0; i < words.length; i++) {
@@ -68,13 +95,19 @@ function longestRSTLNE(words) {
     let wordArray = currWord.split('');
     // for every letter in the current word, is that included in letters
     if (wordArray.every((letter) => letters.includes(letter))) {
-      result.push(currWord);
+      filtered.push(currWord);
     }
   }
-  for (let j = 0; j < result.length; j++) {
-    longest = best(longest, result[j]);
+
+  let longest = null;
+  for (let j = 0; j < filtered.length; j++) {
+    longest = best(longest, filtered[j]);
   }
   return longest;
+
+
+  // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+  // return filtered.reduce((a, b) => best(a, b), null);
 }
 
 
@@ -108,18 +141,15 @@ Stretch homework: more tests cases, with english descriptions
   if we want best() to return the best string in the context of longestRSTLNE, when current=null and candidate="r", 
   what should we return?
 */
-function best(current, candidate) {
-  if (candidate.length > current) {
-    return candidate;
-  }
-  return current;
-}
+
+
 // fix the best function so that test best passes
 function testBest() {
   actual = best(null, 'r');
   expected = 'r';
 
   assert.deepEqual(actual, expected);
+  assert.deepEqual(best('r', null), 'r');
 
   assert.deepEqual(best('r', 'rr'), 'rr');
   assert.deepEqual(best('rr', 'r'), 'rr');
@@ -127,10 +157,6 @@ function testBest() {
 }
 
 function testRSTLNE() {
-  // assert.deepEqual("", "");
-  // passes although it really shouldn't
-  // assert.deepEqual(longestRSTLNE(''), '');
-
   assert.deepEqual(longestRSTLNE(['r']), 'r', "expected f(['r']) => 'r'");
   assert.deepEqual(
     longestRSTLNE(['r', 'xa']),
@@ -155,23 +181,23 @@ function testRSTLNE() {
   );
 
   //
-  // assert.deepEqual(
-  //   longestRSTLNE(["eel", "entente", "ententes", "letterers"]),
-  //   "letterers"
-  // );
-  // assert.deepEqual(
-  //   longestRSTLNE(["eel", "entente", "ententes", "letterers", "x"]),
-  //   "letterers"
-  // );
+  assert.deepEqual(
+    longestRSTLNE(["eel", "entente", "ententes", "letterers"]),
+    "letterers"
+  );
+  assert.deepEqual(
+    longestRSTLNE(["eel", "entente", "ententes", "letterers", "x"]),
+    "letterers"
+  );
 
+  // this test is configured to fail!
   // assert.deepEqual(
   //   longestRSTLNE(["eel", "entente", "ententesees", "letterers"]),
-  //   "letterers"
+  //   "letterers" // should actually be ententesees!
   // );
-
-  console.log('all tests passed');
 }
 testBest();
 testRSTLNE();
+console.log('all tests passed 🎉');
 
 
