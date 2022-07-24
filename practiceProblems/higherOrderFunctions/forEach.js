@@ -32,3 +32,59 @@ const stats = [
 ];
 
 const ages = [33, 44, 32, 56, 23, 32, 38, 43, 23, 45, 56, 33, 41, 52];
+
+
+
+// for loop
+for (let i = 0; i < stats.length; i++) {
+  console.log([i]);
+}
+/*
+[ 0 ]
+[ 1 ]
+[ 2 ]
+[ 3 ]
+[ 4 ]
+[ 5 ]
+[ 6 ]
+[ 7 ]
+[ 8 ]
+[ 9 ]
+*/
+
+
+
+// For Each
+stats.forEach(function (stat) {
+  console.log(stat.year, ...'monkey', stat.score);
+});
+/*
+2019 m o n k e y 4-2
+2017 m o n k e y 4-1
+2016 m o n k e y 4-2
+2015 m o n k e y 4-3
+2014 m o n k e y 4-2
+2013 m o n k e y 4-2
+2012 m o n k e y 4-2
+2011 m o n k e y 4-2
+2009 m o n k e y 4-2
+2008 m o n k e y 4-2
+*/
+
+
+
+let yearTotal = 0;
+stats.forEach((stat) => {
+  yearTotal += stat.year;
+});
+console.log(yearTotal);
+// 20134
+
+// Combine methods
+const combined = ages
+  .map((age) => age * 2)
+  .filter((age) => age >= 40)
+  .sort((a, b) => a - b)
+  .reduce((a, b) => a + b, 0);
+console.log(combined);
+// 1102
