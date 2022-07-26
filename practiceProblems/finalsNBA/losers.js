@@ -9,19 +9,28 @@ const nbaFinalsArray = fs
 // Which teams have made it to the NBA finals but have never won?
 
 // check if any losing teams are also in the winning teams array
-function losersT(array) {
+function losersT(stats) {
+  let neverWon = [];
   let losers = [];
-  for (let i = 0; i < array.length; i++) {
-    let rows = array[i].split(',');
-    let winners = rows[1];
+  let winners = [];
+  for (let i = 1; i < stats.length; i++) {
+    let rows = stats[i].split(',');
+    let winningTeam = rows[1];
+    winners.push(winningTeam);
     let losingTeam = rows[2];
-    console.log(winners, 'winners');
-    // console.log(losingTeam, 'losers');
+    losers.push(losingTeam);
     // if the losing team is not in winners, push to the losers array
-    if (losingTeam !== winners) {
-      losers.push(losingTeam);
+  }
+  for (let j = 0; j < losers.length; j++) {
+    let candidate = losers[j];
+    if (!winners.includes(candidate)) {
+      if (!neverWon.includes(candidate)) {
+        neverWon.push(candidate);
+      }
     }
   }
-  return losers;
+
+  return neverWon;
 }
+
 console.log(losersT(nbaFinalsArray));
