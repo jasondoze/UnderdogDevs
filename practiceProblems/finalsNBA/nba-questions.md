@@ -12,4 +12,4 @@ Read the NBA finals CSV data into one more more dictionaries as needed to comple
  Print out a ranking of who has won the MVP more than once, by times won, e.g. this output:
     - 6 times: Michael Jordan
     - 3 times: Shaquille O'Neal, LeBron James
-    - 2 times: <etc>
+    - 2 times: 
