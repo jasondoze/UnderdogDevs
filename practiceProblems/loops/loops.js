@@ -1,15 +1,21 @@
-const names = ['jobob', 'jeremiah', 'krystal', 'scarlett'];
+// const names = ['YouTube', 'Meta', 'Instagram', 'Netflix', 'Amazon'];
 
-// For of loop
-// for variable of array
-// for (nam of names) {
-  // console.log(nam);
+// // For of loop- used for arrays
+// for (const i of names) {
+//   console.log(i);
 // }
 
-// const user = { firstName: 'Johnny', lastName: 'Belts' };
-// For in loop
-// for (key in user) console.log(user[key]);
+const symbols = {
+  yt: 'You Tube',
+  ig: 'Instagram',
+  mt: 'Meta',
+  nf: 'Netflix',
+  az: 'Amazon',
+};
 
-
-// For each loop
-
+// For in loop- for objects
+for (const i in symbols) {
+  // console.log(i);
+  // console.log(symbols[i]);
+  console.log(`Key is ${i} and value is: ${symbols[i]}`);
+}
