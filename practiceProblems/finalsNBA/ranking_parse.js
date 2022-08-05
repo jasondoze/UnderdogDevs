@@ -1,13 +1,22 @@
 // templated from https://csv.js.org/parse/api/sync/
-
 import assert from 'assert';
 import { parse } from 'csv-parse/sync';
-import { stat } from 'fs';
-const input = `
-Year,Winner,Loser,Score,MVP
-2021,Warriors,Celtics,4-2,Steph Curry
-2020,Warriors,Lakers,4-1,Klay Thompson
-`;
+
+const records = parse(input, {
+  columns: true,
+  skip_empty_lines: true,
+});
+// assert.deepStrictEqual(
+//   records,
+//   [{ key_1: 'value 1', key_2: 'value 2' }]
+// );
+// import assert from 'assert';
+// import { parse } from 'csv-parse';
+// const input = `
+// Year,Winner,Loser,Score,MVP
+// 2021,Warriors,Celtics,4-2,Steph Curry
+// 2020,Warriors,Lakers,4-1,Klay Thompson
+// `;
 
 //The code parses the input string and returns an object with a single
 // property called columns.
@@ -17,7 +26,9 @@ function parseMVP(s) {
     skip_empty_lines: true,
   });
 }
-console.log(parseMVP(input));
+
+module.exports = { parseMVP };
+// console.log(parseMVP(input));
 /* example input 
 Year,Winner,Loser,Score,MVP\n2021,Warriors,Celtics, 4-2,Steph Curry
 
@@ -38,21 +49,21 @@ The code then returns all of the stats objects that are stored in this function.
 // create an MVP variable assinged to MVP
 // if there is no key in the year yet, stats[year] is set to an empty array
 // push the mvp into the stats year array
-function rankingMVP(s) {
-  const data = parseMVP(s);
-  const stats = {};
-  for (const row of data) {
-    const year = row.Year;
-    const mvp = row.MVP;
-    if (!stats[year]) {
-      stats[year] = [];
-    }
-    stats[year].push(mvp);
-  }
-  return stats;
-}
+// function rankingMVP(s) {
+//   const data = parseMVP(s);
+//   const stats = {};
+//   for (const row of data) {
+//     const year = row.Year;
+//     const mvp = row.MVP;
+//     if (!stats[year]) {
+//       stats[year] = [];
+//     }
+//     stats[year].push(mvp);
+//   }
+//   return stats;
+// }
 
-console.log(rankingMVP(input));
+// console.log(rankingMVP(input));
 // { '2020': [ 'Klay Thompson' ], '2021': [ 'Steph Curry' ] }
 
 // use the rankingMVP output data to count the number of times each MVP won the finals
@@ -69,19 +80,19 @@ console.log(rankingMVP(input));
 // use a for of loop to iterate through all mvps of thatfor every MVP of that year, if there was no count for that MVP yet, then counts[mvp] = 0; will initialize the count to zero.
 // if there is no count for that mvp yet, then counts at mvp = 0
 // if there is a count already, then counts at mvp ++
-function mvpCounts(stats) {
-  const counts = {};
-  for (const year in stats) {
-    for (const mvp of stats[year]) {
-      if (!counts[mvp]) {
-        counts[mvp] = 0;
-      }
-      counts[mvp]++;
-    }
-  }
-  return counts;
-}
-console.log(mvpCounts(rankingMVP(input)));
+// function mvpCounts(stats) {
+//   const counts = {};
+//   for (const year in stats) {
+//     for (const mvp of stats[year]) {
+//       if (!counts[mvp]) {
+//         counts[mvp] = 0;
+//       }
+//       counts[mvp]++;
+//     }
+//   }
+//   return counts;
+// }
+// console.log(mvpCounts(rankingMVP(input)));
 // assert.deepStrictEqual(
 //     records,
 //     [{ key_1: 'value 1', key_2: 'value 2' }]
