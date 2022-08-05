@@ -33,6 +33,7 @@ let user = {
 user.login();
 user.logout();
 user.logBlogs();
+console.log(Object.values(user));
 
 // const key = 'location';
 // console.log(user[key]);
