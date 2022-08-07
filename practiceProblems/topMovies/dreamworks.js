@@ -1,12 +1,11 @@
 import fs from 'fs';
 import assert from 'assert';
 import { parse } from 'csv-parse/sync';
-
 const movies = fs.readFileSync('top_movies.csv').toString();
 
 // What movies on this list were distributed by DreamWorks?
-function parseMovies(str) {
-  return parse(str, {
+function parseMovies(string) {
+  return parse(string, {
     columns: true,
     skip_empty_lines: true,
   });
