@@ -12,34 +12,21 @@ function parseMovies(array) {
   });
 }
 
-// find movies made by universal
+// find movies made by universal and their sales
 function universalPictures(data) {
-  let universal = [];
+  let ticketSalesArr = [];
+
   for (let rows of data) {
     let distributor = rows.Distributor;
+    let ticketSales = parseInt(rows['US Sales']);
+    let movieTitleString = rows.Title;
+
     if (distributor === 'Universal Pictures') {
-      universal.push(rows);
+      ticketSalesArr.push(ticketSales);
+      let max = Math.max(...ticketSalesArr);
+      if (max === ticketSales) return movieTitleString;
     }
   }
-  return universal;
 }
 
-// console.log(universalPictures(parseMovies(movies)));
-// console.log(parseMovies(movies));
-
-// find the us sales of all the movies in universal
-function domesticSales(universal) {
-  let sales = [];
-  for (let rows of universal) {
-    sales.push(parseInt(rows['US Sales']));
-  }
-  return sales;
-}
-
-// find the highest domestic sales in the US
-function topSales(sales) {
-  const blockBuster = Math.max(...sales);
-  return blockBuster;
-}
-
-console.log(topSales(domesticSales(universalPictures(parseMovies(movies)))));
+console.log(universalPictures(parseMovies(movies)));
