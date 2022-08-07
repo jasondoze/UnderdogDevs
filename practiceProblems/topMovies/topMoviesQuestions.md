@@ -4,7 +4,7 @@ Questions
 
 What movies on this list were distributed by DreamWorks?
 
-What is the highest grossing moving from Universal Pictures, domestically?
+What is the highest grossing movie from Universal Pictures, domestically?
 
 What distributor has the most films on this list?                                                                             
 What is the earliest year on this list, and what were the films from that year?
