@@ -23,9 +23,9 @@ function universalPictures(data) {
 
     if (distributor === 'Universal Pictures') {
       ticketSalesArr.push(ticketSales);
-      let max = Math.max(...ticketSalesArr);
-      if (max === ticketSales) return movieTitleString;
+      
     }
+
   }
 }
 

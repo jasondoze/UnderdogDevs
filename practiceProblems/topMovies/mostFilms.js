@@ -1,7 +1,7 @@
 import fs from 'fs';
-import assert from 'assert';
-import { parse } from 'csv-parse/sync';
 const movies = fs.readFileSync('top_movies.csv').toString();
+import { parse } from 'csv-parse/sync';
+
 
 function parseMovies(array) {
   return parse(array, {
