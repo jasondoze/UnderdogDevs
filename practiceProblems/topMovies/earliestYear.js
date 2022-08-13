@@ -12,13 +12,23 @@ function parseMovies(array) {
 }
 
 function oldestMovie(data) {
-  let releaseYears = [];
-  let minYears = [];
+  let oldestMovies = [];
+  let yearArr = [];
+  let earliestYear = [];
   for (let rows of data) {
-    let title = rows.Title;
-    let year = rows['Release Date'];
-    releaseYears.push();
-    console.log(releaseYears);
+    let parseYears = parseInt(rows['Release Date']);
+    yearArr.push(parseYears);
+  }
+  let min = Math.min(...yearArr);
+  earliestYear.push(min);
+
+  for (let movies of data) {
+    let title = movies.Title;
+    let year = parseInt(movies['Release Date']);
+    oldestMovies.push({ title, year });
+    if (earliestYear == year) {
+      console.log(title, year);
+    }
   }
 }
 
