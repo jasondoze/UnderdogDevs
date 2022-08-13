@@ -22,10 +22,8 @@ function universalPictures(data) {
     let movieTitleString = rows.Title;
 
     if (distributor === 'Universal Pictures') {
-      ticketSalesArr.push(ticketSales);
-      
+      console.log(`${movieTitleString}: ${ticketSales}`);
     }
-
   }
 }
 
