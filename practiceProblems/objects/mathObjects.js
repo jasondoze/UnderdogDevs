@@ -17,16 +17,4 @@ const random = Math.random();
 console.log(random);
 console.log(Math.round(random * 100));
 
-// function mvpCounts(stats) {
-//   const counts = {};
-//   for (const year in stats) {
-//     for (const mvp of stats[year]) {
-//       if (!counts[mvp]) {
-//         counts[mvp] = 0;
-//       }
-//       counts[mvp]++;
-//     }
-//   }
-//   return counts;
-// }
-// console.log(mvpCounts(rankingMVP(input)));
+

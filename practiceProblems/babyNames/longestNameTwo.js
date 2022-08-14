@@ -12,8 +12,9 @@ function longestBabyName(babyNames) {
     if (babyNames[i].length > longestNamesLength) {
       longestNames = babyNames[i];
       longestNamesLength = babyNames[i].length;
-      console.log(longestNames);
+      // console.log(longestNames);
     }
   }
+  return longestNames;
 }
 console.log(longestBabyName(textByLine));

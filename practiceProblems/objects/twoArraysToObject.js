@@ -1,3 +1,5 @@
+
+// merge two arrays into one object
 let keyPair = ['ID', 'FirstName', 'LastName', 'Gender'];
 let valuePair = [1, 'Mehvish', 'Ashiq', 'Female'];
 let arr = [];

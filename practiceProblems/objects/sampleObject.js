@@ -19,17 +19,17 @@ let cars = [
   },
 ];
 
-// let car = {
-//   color: 'red',
-//   type: 'cabrio',
-//   registration: new Date('2016-05-02'),
-//   capacity: 2,
-// };
-// cars.unshift(car);
-// console.log(cars);
+let car = {
+  color: 'red',
+  type: 'cabrio',
+  registration: new Date('2016-05-02'),
+  capacity: 2,
+};
+cars.unshift(car);
+console.log(cars);
 
-// cars.push(car);
-// console.log(cars);
+cars.push(car);
+console.log(cars);
 
 // Array.splice(
 //   {index where to start},
@@ -37,29 +37,25 @@ let cars = [
 //   {items to add}
 // );
 
-// cars.splice(1, 0, car);
-// console.log(cars);
+cars.splice(1, 0, car);
+console.log(cars);
 
-// let car = cars.find((car) => car.color === 'red');
-// console.log(car);
+let carz = cars.find((car) => car.color === 'red');
+console.log(carz);
 
-// let car = cars.find(
-//   (car) => car.color === 'red' && car.type === 'station wagon'
-// );
-// console.log(car);
 
-// let redCars = cars.filter((car) => car.color === 'red');
-// console.log(redCars);
+let redCars = cars.filter((car) => car.color === 'red');
+console.log(redCars);
 
-// let sizes = cars.map((car) => {
-//   if (car.capacity <= 3) {
-//     return 'small';
-//   }
-//   if (car.capacity <= 5) {
-//     return 'medium';
-//   }
-//   return 'large';
-// });
-// console.log(sizes);
+let sizes = cars.map((car) => {
+  if (car.capacity <= 3) {
+    return 'small';
+  }
+  if (car.capacity <= 5) {
+    return 'medium';
+  }
+  return 'large';
+});
+console.log(sizes);
 const menu = {  burger: 10,  fries: 3,  coleslaw: 4,  coke: 2,  beer: 5};
 
