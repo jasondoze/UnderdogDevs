@@ -40,6 +40,7 @@ const oneMaleCharacter = characters.some((character) => {
   return character.gender === 'male';
 });
 console.log(oneMaleCharacter);
+// true
 
 // or
 
@@ -47,16 +48,20 @@ const oneMaleCharacter2 = characters.some(
   (character) => character.gender === 'male'
 );
 console.log(oneMaleCharacter2);
+// true
 
 const onlyBlueEyes = characters.some(
   (character) => character.eye_color === 'blue'
 );
 console.log(onlyBlueEyes);
+// true
 
 const oneTallCharacter = characters.some(
   (character) => character.height > 202
 );
 console.log(oneTallCharacter);
+// false
 
 const massCharacter = characters.some((character) => character.mass < 40);
 console.log(massCharacter);
+// false

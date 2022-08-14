@@ -13,5 +13,6 @@ function myFunction(obj, int) {
   return result;
 }
 
-// Expected {a:3,b:6,c:9}
+
 console.log(myFunction({ j:9,i:2,x:3,z:4},10));
+// { j: 90, i: 20, x: 30, z: 40 }

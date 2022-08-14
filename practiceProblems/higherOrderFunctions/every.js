@@ -38,14 +38,18 @@ const allBlues = characters.every(
   (character) => character.eye_color === 'blue'
 );
 console.log(allBlues);
+// false
 
 const massForty = characters.every((character) => character.mass > 40);
 console.log(massForty);
+// true
 
 const shorterThanForty = characters.every(
   (character) => character.height < 200
 );
 console.log(shorterThanForty);
+// false
 
 const allMale = characters.every((character) => character.gender !== 'male');
 console.log(allMale);
+// false

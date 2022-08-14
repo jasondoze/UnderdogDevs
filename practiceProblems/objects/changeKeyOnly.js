@@ -8,9 +8,12 @@
 // change the key to a new string, delete the old key string
 // merge the objects with .assign
 function myFunction(obj1, obj2) {
+  // create a new key in obj2 with a property of d: assign its value to obj2.b which is 1
   obj2.d = obj2.b;
+  // delete the old key
   delete obj2.b;
   return Object.assign(obj1, obj2);
 }
 
 console.log(myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }));
+// { a: 5, b: 4, c: 3, e: 2, d: 1 }

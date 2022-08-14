@@ -1,3 +1,7 @@
+// The filter() method creates a shallow copy of a portion of a given array, 
+// filtered down to just the elements from the given array that pass the test 
+// implemented by the provided function.
+
 const stats = [
   { year: 2019, team: 'Toronto Raptors', score: '4-2', mvp: 'Kawhi Leonard' },
   {
@@ -101,8 +105,6 @@ console.log(filterTeams2);
   }
 ]
 */
-
-
 
 // Filter teams ES6 with conditional
 const filterTeams3 = stats.filter(
