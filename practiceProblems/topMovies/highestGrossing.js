@@ -14,8 +14,6 @@ function parseMovies(array) {
 
 // find movies made by universal and their sales
 function universalPictures(data) {
-  let ticketSalesArr = [];
-
   for (let rows of data) {
     let distributor = rows.Distributor;
     let ticketSales = parseInt(rows['US Sales']);
