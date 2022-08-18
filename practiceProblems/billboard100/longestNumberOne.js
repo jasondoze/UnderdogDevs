@@ -8,14 +8,12 @@ function parseMovies(array) {
     skip_empty_lines: true,
   });
 }
-
 /*
 What song was the #1 song for the most weeks of 2000, 
 who was the artist, and how many weeks was it at #1??
 */
 function longestRunning1(data) {
   let peakArr = [];
-
   for (const rows of data) {
     let artist = rows.artist;
     let songTitle = rows.song;
@@ -28,10 +26,10 @@ function longestRunning1(data) {
       peakArr.push([songTitle, artist]);
     }
   }
-
   // count the times a song was number one using reduce
   let countArr = [];
   let countSongs = peakArr.reduce((songName, performer) => {
+    // if songName[performer] === undefined  || songName[performer] === null
     songName[performer] ??= 0;
     songName[performer]++;
     return songName;
@@ -56,7 +54,5 @@ function longestRunning1(data) {
     }
   }
 }
-
-// console.log(i)
 
 console.log(longestRunning1(parseMovies(movies)));

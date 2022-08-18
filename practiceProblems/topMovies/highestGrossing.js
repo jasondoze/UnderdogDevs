@@ -20,7 +20,7 @@ function universalPictures(data) {
     let movieTitleString = rows.Title;
 
     if (distributor === 'Universal Pictures') {
-      console.log(`${movieTitleString}: ${ticketSales}`);
+      console.log(`${movieTitleString}: $`, ticketSales);
     }
   }
 }
