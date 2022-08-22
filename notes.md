@@ -46,3 +46,7 @@ Here's my favorite Big O analogy: Let's say you're making dinner for your family
 // console.log(oneVowel(textByLine));
 
 | more 
+
+Depth First Traversal: follows nodes in a single line- uses a STACK that adds/removes from the top
+
+Breadth First Traversal follows nodes in all directions evenly- uses a QUEUE that follows first in first out
