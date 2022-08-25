@@ -16,25 +16,27 @@ const artist = [
   { artist: 'Nas', song: 'One mic' },
   { artist: 'Nas', song: 'Rewind' },
   { artist: 'Nas', song: 'The world is yours' },
+  { artist: 'Nas', song: 'The world is mine' },
+  { artist: 'Nas', song: 'The world is your oyster' },
 ];
 
-function allArtists(data) {
-  let allCharted = [];
-  for (const rows of data) {
-    let artist = rows.artist;
-    let song = rows.song;
-    allCharted.push({ artist, song });
-  }
-  return allCharted;
-}
+// function allArtists(data) {
+//   let allCharted = [];
+//   for (const rows of data) {
+//     let artist = rows.artist;
+//     let song = rows.song;
+//     allCharted.push({ artist, song });
+//   }
+//   return allCharted;
+// }
 
 // create a function that takes in the allCharted array and creates a new set
 // for each artist that has the artist name as the key and the song as the value
-function mostCharted(allCharted) {
+function mostCharted(allCharted2) {
   // let allCharted = allArtists(data);
   let byArtist = {};
   // iterate over the allCharted array
-  for (const rows of allCharted) {
+  for (const rows of allCharted2) {
     // if byArtist[rows.artist] is undefined or null
     byArtist[rows.artist] ??= new Set();
     // for each artist, add a key with artist name and a value of a new set to byArtist
@@ -59,14 +61,32 @@ function mostCharted(allCharted) {
 }
 
 // create a function that finds the largest set
-let smallestSet = 0;
-let mostSongArtist = [];
-function mostSets(byArist) {
-  for (const sets in byArist) {
-    // .size finds the length of our set
-    let set = byArist[sets].size;
-    console.log(set);
-  }
-}
+// let smallestSet = 0;
 
-console.log(mostSets(mostCharted(allArtists(artist))));
+// function mostSets(allSets) {
+//   let totalSets = mostCharted(allSets);
+//   for (const entries in totalSets) {
+//     // console.log(totalSets[entries]);
+//     let songCount = totalSets[entries].size;
+//     console.log(songCount);
+
+    // console.log(size);
+    // if (size > smallestSet) {
+    //   smallestSet;
+    //   console.log(totalSets[entries]);
+    // }
+  // }
+  // let totalSets = mostCharted(data)
+  // .size finds the length of our set
+  // let set = totalSets[entries].size;
+
+  // console.log(set);
+
+  // return mostSongArtist;
+// }
+
+console.log(mostCharted(artist));
+// same
+let mostSetsResults = mostSets(artist);
+let mostChartedResults = mostCharted(mostSetsResults);
+console.log(mostChartedResults);
