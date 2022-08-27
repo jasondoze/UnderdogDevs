@@ -19,11 +19,6 @@
   'OstrichKangaroo']
  
  */
-const animals_by_leg_count = {
-  2: ['Eagle', 'Kangaroo', 'Ostrich'],
-  4: ['Alligator', 'Cheetah', 'Hedgehog', 'Zebra'],
-  8: ['Octopus', 'Scorpion'],
-};
 
 // function create_all_monsters(num_legs) {
 //   let animals = [];
@@ -39,17 +34,23 @@ const animals_by_leg_count = {
 // }
 // console.log(create_all_monsters(8));
 
+const animals_by_leg_count = {
+  2: ['Eagle', 'Kangaroo', 'Ostrich'],
+  4: ['Alligator', 'Cheetah', 'Hedgehog', 'Zebra'],
+  8: ['Octopus', 'Scorpion'],
+};
+
 function allMonsters(numLegs) {
-  let hybrid = [];
-  let allMonsters = animals_by_leg_count[numLegs];
-  for (let i of allMonsters) {
-    for (let j of allMonsters) {
-      if (i !== j) {
-        hybrid.push(i + j);
+  let hybrids = [];
+  let monstrosities = animals_by_leg_count[numLegs];
+  for (let i in monstrosities) {
+    for (let j in monstrosities) {
+      if (monstrosities[i] !== monstrosities[j]) {
+        hybrids.push(monstrosities[i] + monstrosities[j]);
       }
     }
   }
-  return hybrid;
+  return hybrids;
 }
 
 console.log(allMonsters(4));
