@@ -76,6 +76,7 @@ const mix2 = (firstArray, secondArray) => {
   for (let i = 0; i < shortestLength; i++) {
     // add pair
     resultArr.push(firstArray[i], secondArray[i]);
+    
   }
     // iterate from shortest to longest lengths trying with an I instead of J
     for (let i = shortestLength; i < longestLength; i++) {
@@ -135,7 +136,7 @@ console.log(mix3([7, 4, 17, 10, 48], ['h', 'a', 'c']));
 // Here I'm using undefined to determine which elements to push into the array
 const mix4 = (arr1, arr2) => {
   let result = [];
-
+  let longestLength = Math.max(arr1.length, arr2.length);
   for (let i = 0; i < longestLength; i++) {
     if (arr1[i] !== undefined) {
       result.push(arr1[i]);
@@ -148,7 +149,9 @@ const mix4 = (arr1, arr2) => {
 };
 console.log(mix4([1, 2, 3], [4, 5, 6]));
 // [1, 4, 2, 5, 3, 6]
+
 console.log(mix4(['h', 'a', 'c'], [7, 4, 17, 10, 48]));
 //  // ["h", 7, "a", 4, "c", 17, 10, 48]
+
 console.log(mix4([7, 4, 17, 10, 48], ['h', 'a', 'c']));
 //  [ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
