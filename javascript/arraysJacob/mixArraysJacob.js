@@ -31,7 +31,7 @@ console.log(mix([1, 2, 3], [4, 5, 6]));
 console.log(mix(['h', 'a', 'c'], [7, 4, 17, 10, 48]));
 // ["h", 7, "a", 4, "c", 17, 10, 48]
 console.log(mix([7, 4, 17, 10, 48], ['h', 'a', 'c']));
-[ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
+// [ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
 
 /*
 go through both arrays and take the first element of each array (pair of elements) 
