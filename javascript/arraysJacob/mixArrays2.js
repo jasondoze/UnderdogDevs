@@ -25,7 +25,6 @@
 
 const mix3 = (arr1, arr2) => {
   let result = [];
-  let shortest = [];
   if (arr1.length < arr2.length) {
     shortest = arr1;
     longest = arr2;
@@ -43,3 +42,9 @@ const mix3 = (arr1, arr2) => {
 
   return result;
 };
+console.log(mix3([1, 2, 3], [4, 5, 6]));
+// [1, 4, 2, 5, 3, 6]
+console.log(mix3(['h', 'a', 'c'], [7, 4, 17, 10, 48]));
+//  // ["h", 7, "a", 4, "c", 17, 10, 48]
+console.log(mix3([7, 4, 17, 10, 48], ['h', 'a', 'c']));
+//  [ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
