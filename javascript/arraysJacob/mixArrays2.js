@@ -23,8 +23,21 @@
 // console.log(mix3([7, 4, 17, 10, 48], ['h', 'a', 'c']));
 // //  [ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
 
+
+/*
+Where did I get tripped up? Its definitely in part because I've had the notion that 
+iterating had to be done ON an object... I thought I was defining what I was iterating
+though...for instance, if I'm 'iterating' over array2.length, then I'm directing the 
+for loop to iterate over arr2. It's still a difficult concept to understand that
+I'm only iterating through index numbers. But thats how for loops work right? Idk how
+this was my understanding yet. 
+*/
+
+
 const mix3 = (arr1, arr2) => {
   let result = [];
+  // determine whether the first input is the longest or the shortest
+  // if the first input is the shortest
   if (arr1.length < arr2.length) {
     shortest = arr1;
     longest = arr2;
@@ -32,10 +45,12 @@ const mix3 = (arr1, arr2) => {
     shortest = arr2;
     longest = arr1;
   }
- 
+  // iterate over the shortest array first and push matching indexes into the result arr
   for (let i = 0; i < shortest.length; i++) {
     result.push(arr1[i], arr2[i]);
   }
+  // iterate from the length of the shortest array to the end of longest
+  // push that longest arrays elements into result
   for (let j = shortest.length; j < longest.length; j++) {
     result.push(longest[j]);
   }
