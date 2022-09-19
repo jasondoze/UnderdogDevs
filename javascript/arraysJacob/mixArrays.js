@@ -12,7 +12,7 @@ The elements that make up the arrays are completely random, and
 the arrays can be of differing lengths.
 */
 
-  // first approach that had let me to screening for undefined
+// first approach that had let me to screening for undefined
 const mix = (firstArray, secondArray) => {
   let mixedArr = [];
   for (let i = 0; i < secondArray.length; i++) {
@@ -48,7 +48,7 @@ Find the the length of the shorter array, N, and longest array, M. Add N interle
 Add the last (M-N) elements of the longest array.
 */
 
-  /*  
+/*  
       A note I made after the meeting -> we're not defining anything to iterate over 
       but we are still iterating over them...
 
@@ -60,8 +60,8 @@ Add the last (M-N) elements of the longest array.
       know to iterate over the arrays or any input, if I dont specify iterating over them in the loop?
       This is a huge gap for me obviously lol.
   */
-       
-// Here I am iterating up to the shortest array, 
+
+// Here I am iterating up to the shortest array,
 // then trying to iterate from the shortest to the longest.
 const mix2 = (firstArray, secondArray) => {
   // create result arr
@@ -76,12 +76,10 @@ const mix2 = (firstArray, secondArray) => {
   for (let i = 0; i < shortestLength; i++) {
     // add pair
     resultArr.push(firstArray[i], secondArray[i]);
-    
   }
-    // iterate from shortest to longest lengths trying with an I instead of J
-    for (let i = shortestLength; i < longestLength; i++) {
-      resultArr.push(firstArray[i]);
-
+  // iterate from shortest to longest lengths trying with an I instead of J
+  for (let i = shortestLength; i < longestLength; i++) {
+    resultArr.push(firstArray[i]);
   }
   // add the reamaining elements of the longer array
   return resultArr;
@@ -91,8 +89,7 @@ console.log(mix2([1, 2, 3], [4, 5, 6]));
 console.log(mix2(['h', 'a', 'c'], [7, 4, 17, 10, 48]));
 // ["h", 7, "a", 4, "c", 17, 10, 48]
 console.log(mix2([7, 4, 17, 10, 48], ['h', 'a', 'c']));
-[ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
-
+[7, 'h', 4, 'a', 17, 'c', 10, 48];
 
 /* Here I went down a path to find the shortest and the longest lengths and then used an if else 
 statement to reassign the longest arr to a new array called longest and did the same with shortest.
@@ -102,7 +99,7 @@ pushing undefined elements into the result array.
 
 const mix3 = (arr1, arr2) => {
   let result = [];
-  let shortestArr = [];
+
   let shortestLength = Math.min(arr1.length, arr2.length);
   let longestLength = Math.max(arr1.length, arr2.length);
   // if the first array is longer than the second then the first is the longsest
@@ -131,7 +128,6 @@ console.log(mix3(['h', 'a', 'c'], [7, 4, 17, 10, 48]));
 //  // ["h", 7, "a", 4, "c", 17, 10, 48]
 console.log(mix3([7, 4, 17, 10, 48], ['h', 'a', 'c']));
 //  [ 7 , 'h', 4, 'a', 17, 'c', 10, 48]
-
 
 // Here I'm using undefined to determine which elements to push into the array
 const mix4 = (arr1, arr2) => {
