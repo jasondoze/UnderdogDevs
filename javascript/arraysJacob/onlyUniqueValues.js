@@ -176,36 +176,40 @@ strings, bools, etc
 
 // console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
 
-let onlyUnique = (someArray) => {
-  const unique = someArray.filter((value) => {
-    console.log(
-      '   indexOf',
-      someArray.indexOf(value),
-      '   lastIndexOf',
-      someArray.lastIndexOf(value)
-    );
-
-    return someArray.indexOf(value) === someArray.lastIndexOf(value);
-  });
-  return unique;
-};
-
-console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
-
 // let onlyUnique = (someArray) => {
-//   let result = [];
-//   for (let i = 0; i < someArray.length; i++) {
-//     if (
-//       someArray.indexOf(someArray[i]) === someArray.lastIndexOf(someArray[i])
-//     ) {
-//       result.push(someArray[i]);
-//     }
-//   }
-//   return result;
+//   const unique = someArray.filter((value) => {
+//     console.log(
+//       '   indexOf',
+//       someArray.indexOf(value),
+//       '   lastIndexOf',
+//       someArray.lastIndexOf(value)
+//     );
+
+//     return someArray.indexOf(value) === someArray.lastIndexOf(value);
+//   });
+//   return unique;
 // };
 
 // console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
-// console.log(onlyUnique([])); // []
-// console.log(onlyUnique(['a'])); // ['a']
-// console.log(onlyUnique(['a', 'a'])); // []
-// console.log(onlyUnique(['a', 'a', 'a'])); // []
+
+let onlyUnique = (someArray) => {
+  //create an empty result array
+  let result = [];
+  //iterate over the array
+  for (let i = 0; i < someArray.length; i++) {
+    // if the index occurence of the value equals the last index occurence of the value
+    if (
+      someArray.indexOf(someArray[i]) === someArray.lastIndexOf(someArray[i])
+    ) {
+      // push those values to the result arr
+      result.push(someArray[i]);
+    }
+  }
+  return result;
+};
+
+console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
+console.log(onlyUnique([])); // []
+console.log(onlyUnique(['a'])); // ['a']
+console.log(onlyUnique(['a', 'a'])); // []
+console.log(onlyUnique(['a', 'a', 'a'])); // []
