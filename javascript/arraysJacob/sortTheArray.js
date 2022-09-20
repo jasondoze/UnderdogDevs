@@ -6,24 +6,30 @@
 // also ordered appropriately.
 
 const sortTheArray = (someArray) => {
+  // create a number arr variable
   let number = [];
+  // create a string arr variable
   let string = [];
+  // iterate over the the mixed array
   for (let i = 0; i < someArray.length; i++) {
+    // if the type of the value at i is a number
     if (typeof someArray[i] === 'number') {
+      // push that value to the number array
       number.push(someArray[i]);
-      number.sort((a, b) => a - b);
-      console.log(number);
+      // sort that array
+      number.sort();
+      // console.log(number);
+      // if it is not a number, push it to the string array
     } else {
-      string.push(someArray[i])
-      string.sort((a, b) => a - b);
-      console.log(string);
+      string.push(someArray[i]);
+      // sort the string array
+      string.sort();
+      // console.log(string);
     }
   }
+  // return the number array first plus the string array
   return number.concat(string);
 };
 
 console.log(sortTheArray(['b', 6, 'a', 'q', 7, 2]));
 // [2, 6, 7, "a", "b", "q"]
-
-let arr = ['a', 'b', 'c'];
-console.log(arr.sort((a, b) => a - b));

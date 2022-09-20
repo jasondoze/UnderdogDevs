@@ -39,10 +39,15 @@ const mix3 = (arr1, arr2) => {
   // determine whether the first input is the longest or the shortest
   // if the first input is the shortest
   if (arr1.length < arr2.length) {
+    // shortest = arr1
     shortest = arr1;
+    // longest = arr2
     longest = arr2;
+    // otherwise
   } else {
+    // shortest = arr2
     shortest = arr2;
+    // longest = arr1
     longest = arr1;
   }
   // iterate over the shortest array first and push matching indexes into the result arr

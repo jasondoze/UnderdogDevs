@@ -3,8 +3,11 @@
 // Return an array containing these numbers, smallest number first.
 
 const findSmallestAndLargestNumbers = (someArray) => {
+  // find the smallest number in the array
   let smallest = Math.min(...someArray);
+  // find the largest number in the array
   let largest = Math.max(...someArray);
+  // log the smallest and largest numbers in the array
   console.log(smallest, largest);
 };
 
