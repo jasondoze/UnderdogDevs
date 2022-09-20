@@ -10,11 +10,15 @@
 // of just the 2.
 
 const findCommonWords = (firstArray, secondArray) => {
-  // your code
+  // create a result arr variable
   let result = [];
+  // iterate over the first array
   for (let i = 0; i < firstArray.length; i++) {
+    // iterate over the second array
     for (let j = 0; j < secondArray.length; j++) {
+      // if the first array at i includes the value at second array at j
       if (firstArray[i].includes(secondArray[j])) {
+        // push that value to the result arr
         result.push(firstArray[i]);
       }
     }

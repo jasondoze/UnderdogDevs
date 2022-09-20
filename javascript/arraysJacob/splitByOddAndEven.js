@@ -28,9 +28,10 @@ const splitByOddAndEven = (someArray) => {
   for (let i of unique) {
     // if the numbers are even
     if (i % 2 === 0) {
+      // push them to the evens arr
       even.push(i);
       even.sort((a, b) => a - b);
-      // else
+      // else push to odds
     } else {
       odd.push(i);
       odd.sort((a, b) => a - b);
@@ -45,4 +46,4 @@ const splitByOddAndEven = (someArray) => {
 console.log(splitByOddAndEven([2, 3, 7, 6, 2, 4, 9]));
 // [[2, 4, 6], [3, 7, 9]]
 
-//[ [ 2, 4, 6 ], [ 3, 7, 9 ] ]
+// output: [ [ 2, 4, 6 ], [ 3, 7, 9 ] ]
