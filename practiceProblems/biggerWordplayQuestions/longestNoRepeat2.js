@@ -1,46 +1,43 @@
-const fs = require("fs");
-const text = fs.readFileSync("sowpods.txt");
-const words = text.toString().toLowerCase().split("\n");
+const { match } = require('assert');
+const fs = require('fs');
+const text = fs.readFileSync('sowpods.txt');
+const words = text.toString().toLowerCase().split('\n');
 
-// create a dictionary object like this:
-// {
-// name: word[i],
-//   letters; [all the letters in the word in order in an array]
-// letterCount: { all the letters in the word  and their counts}
-// }
+// What is the longest word that has no repeating letters?
 
-function createDictionary(words) {
-  let dictionary = {};
-let noRepeat = [];
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i];
-    let letters = word.split("");
-    let letterCount = {};
-    for (let j = 0; j < letters.length; j++) {
-      let letter = letters[j];
-      if (!letterCount[letter]) {
-        letterCount[letter] = 1;
-      } else {
-        letterCount[letter]++;
-      }
-    }
-    dictionary[word] = {
-      // letters: letters,
-      letterCount: letterCount,
-    };
-    // if the values of the letterCount object are the same, then the word is a no repeat word, push it to the noRepeat array
-    if (Object.values(dictionary[word].letterCount).every(value => value === 1)) {
-      noRepeat.push(word);
+function createDictionary(wordArray) {
+  // create an empty array result variable
+  let noRepeat = [];
+  // iterate over the word array
+  for (let i = 0; i < wordArray.length; i++) {
+    // assign a no dupes variable that tests if regex has no more than one 
+    // sequential letter in the word: returns true or false
+    let hasNoDupes = !/([a-z])\1/.test(wordArray[i]);
+    // if the variable is true, it has no duplicates
+    if (hasNoDupes === true) {
+      // so push the non duplicates to the no repeat array
+      noRepeat.push(wordArray[i]);
     }
   }
-// find the longest word in the noRepeat array
-  let longest = noRepeat.reduce((a, b) => {
-    return a.length > b.length ? a : b;
+  // assign a longest word empty string
+  let longestWord = '';
+  // assign a longest length variable to 0
+  let longestLength = 0;
+  // iterate over the no repeat array
+  for (let j = 0; j < noRepeat.length; j++) {
+    // let max = Math.max(noRepeat[j].length);
+    // console.log(max);
+    // if the word at j.length is greater than 0
+    if (noRepeat[j].length > longestLength) {
+      // longestLength is reassigned to noRep[j].length
+      longestLength = noRepeat[j].length;
+      // longesWord is reassigned to noRep[j]
+      longestWord = noRepeat[j];
+    }
   }
-  );
-  return longest;
+  return longestWord;
 }
+
 console.log(createDictionary(words));
-
-
-
+// output: aboriginalities 
+// length of 15, same as largest from max variable

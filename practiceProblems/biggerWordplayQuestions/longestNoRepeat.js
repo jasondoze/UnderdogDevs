@@ -1,6 +1,6 @@
-const fs = require("fs");
-const text = fs.readFileSync("sowpods.txt");
-const words = text.toString().toLowerCase().split("\n");
+const fs = require('fs');
+const text = fs.readFileSync('sowpods.txt');
+const words = text.toString().toLowerCase().split('\n');
 
 // create an empty no repeat object varible
 // create an longest empty array variable
@@ -14,18 +14,8 @@ const words = text.toString().toLowerCase().split("\n");
 // // What is the longest word that has no repeating letters?
 function longestNoRepeat(words) {
   let wordObj = {};
-  for (let i = 0; i < words.length; i++) {
-    let word = words[i];
-    for (let j = 0; j < word.length; j++) {
-      let letter = word[j];
-      if (!letter in wordObj) {
-        wordObj[letter] = 1;
-      }
-    }
-  }
+  console.log(words);
 }
-
-// return noRepeat;
 
 console.log(longestNoRepeat(words));
 

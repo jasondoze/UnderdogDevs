@@ -20,3 +20,16 @@ const buildArray = (someArray, indexes) => {
 
 console.log(buildArray(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
 // ["tue", "thur", "fri"]
+
+// How many times is i incremented when this runs on the example you console log? 
+// 5
+// How many times is j incremented?
+// 15
+
+// From the first array, construct a new array based on the indexes supplied.
+const buildArray2 = (someArray, indexes) => {
+
+};
+
+console.log(buildArray2(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
+// ["tue", "thur", "fri"]

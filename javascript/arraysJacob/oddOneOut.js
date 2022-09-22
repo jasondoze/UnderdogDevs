@@ -6,19 +6,21 @@
 // check if all the characters are the same
 // if they are not, print the unique character
 
-// 5 - 7 minutes
 const findOddOneOut = (someArray) => {
-  // initialize the first character
-  let first = someArray[0];
-//   console.log(first);
+  let result = [];
   // iterate over the length of the array
-  for (let i = 1; i < someArray.length; i++) {
+  for (let i = 0; i < someArray.length; i++) {
+   
     // if the value at i does not include initialized first variable
-    if (!someArray[i].includes(first)) {
+    if (
+      someArray.indexOf(someArray[i]) === someArray.lastIndexOf(someArray[i])
+    ) {
       // return that value
-      return someArray[i];
+      result.push(someArray[i]);
     }
   }
+  return result;
 };
 
 console.log(findOddOneOut(['a', 'a', 'b', 'a'])); // b
+console.log(findOddOneOut(['b', 'a', 'a', 'a'])); // b
