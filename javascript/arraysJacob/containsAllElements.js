@@ -5,7 +5,7 @@
 const containsAllElements = (firstArray, secondArray) => {
   // iterate over the array
   for (let i = 0; i < firstArray.length; i++) {
-    // if the lengths of the arrays do not match, 
+    // if the lengths of the arrays do not match,
     // the arrays are not possibly containing all the elements
     if (firstArray[i].length !== secondArray[i].length) {
       return false;
@@ -15,4 +15,7 @@ const containsAllElements = (firstArray, secondArray) => {
   }
 };
 
-console.log(containsAllElements(['monday', 'tuesday'], ['tuesday'])); // false
+console.log(containsAllElements( ['monday', 'tuesday'], ['tuesday'])); // false
+console.log(containsAllElements( ['tuesday'],['monday', 'tuesday'])); // false
+// ['monday', 'tuesday'] contains tuesday, so why does this return false? Maybe I am misreading the question?
+// What does containsAllElements(['tuesday'], ['monday', 'tuesday']) return?

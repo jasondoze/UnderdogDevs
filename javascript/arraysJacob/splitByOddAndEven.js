@@ -30,16 +30,16 @@ const splitByOddAndEven = (someArray) => {
     if (i % 2 === 0) {
       // push them to the evens arr
       even.push(i);
-      even.sort((a, b) => a - b);
+      even.sort();
       // else push to odds
     } else {
       odd.push(i);
-      odd.sort((a, b) => a - b);
+      odd.sort();
     }
   }
   // push the evens in first, then the odds
-  noDupes.push(even);
-  noDupes.push(odd);
+  noDupes.push(even, odd);
+  // noDupes.push(odd);
   return noDupes;
 };
 
