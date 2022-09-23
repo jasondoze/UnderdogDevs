@@ -15,7 +15,11 @@ const containsAllElements = (firstArray, secondArray) => {
   }
 };
 
-console.log(containsAllElements( ['monday', 'tuesday'], ['tuesday'])); // false
-console.log(containsAllElements( ['tuesday'],['monday', 'tuesday'])); // false
+console.log(containsAllElements( ['monday', 'tuesday'], ['tuesday'])); // solution provided: false
 // ['monday', 'tuesday'] contains tuesday, so why does this return false? Maybe I am misreading the question?
 // What does containsAllElements(['tuesday'], ['monday', 'tuesday']) return?
+console.log(containsAllElements( ['tuesday'],['monday', 'tuesday'])); // false
+
+/*
+This was the solution provided from the website, I'm confused on what the question is asking.
+*/
