@@ -1,4 +1,4 @@
-const { match } = require('assert');
+// const { match } = require('assert');
 const fs = require('fs');
 const text = fs.readFileSync('sowpods.txt');
 const words = text.toString().toLowerCase().split('\n');
@@ -40,4 +40,5 @@ function createDictionary(wordArray) {
 
 console.log(createDictionary(words));
 // output: aboriginalities 
+
 // length of 15, same as largest from max variable

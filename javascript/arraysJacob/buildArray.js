@@ -18,18 +18,32 @@ const buildArray = (someArray, indexes) => {
   return newArr;
 };
 
-console.log(buildArray(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
+// console.log(buildArray(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
 // ["tue", "thur", "fri"]
 
-// How many times is i incremented when this runs on the example you console log? 
+// How many times is i incremented when this runs on the example you console log?
 // 5
 // How many times is j incremented?
 // 15
-
+// Build a new array by indexes
 // From the first array, construct a new array based on the indexes supplied.
 const buildArray2 = (someArray, indexes) => {
-
+  let newArr = [];
+  // iterate over the indexes array
+  for (let i = 0; i < indexes.length; i++) {
+    let index = indexes[i];
+    // 1 (Jason) for every index number, push that index of some array into new array
+    // 2 (Jacob) push that index of some array into new array
+    // push the index of some array
+    newArr.push(someArray[index]);
+  }
+  return newArr;
 };
 
-console.log(buildArray2(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
+//console.log(buildArray(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4]));
 // ["tue", "thur", "fri"]
+console.log(buildArray2(['mon', 'tue', 'wed', 'thur', 'fri'], [1, 3, 4])); // ['mon']
+
+// do it incrementally
+// from the first array construct a new array, ignore indexes whose value is even
+['tue', 'thurs'];
