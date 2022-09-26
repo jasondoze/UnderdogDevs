@@ -34,8 +34,11 @@ const buildArray2 = (someArray, indexes) => {
     let index = indexes[i];
     // 1 (Jason) for every index number, push that index of some array into new array
     // 2 (Jacob) push that index of some array into new array
-    // push the index of some array
-    newArr.push(someArray[index]);
+    // from the first array construct a new array, ignore indexes whose value is even
+    if (index % 2 === 1) {
+      // push the index of some array
+      newArr.push(someArray[index]);
+    }
   }
   return newArr;
 };

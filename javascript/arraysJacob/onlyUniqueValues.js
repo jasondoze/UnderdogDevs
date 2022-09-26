@@ -7,7 +7,7 @@
 // one time
 
 // My first version of getting unique values, which does not mean getting
-// only unique values.
+// ONLY unique values.
 const onlyUnique = (someArray) => {
   // create a unique array variable
   // iterate over the length of the array
@@ -193,7 +193,7 @@ Set(1) { 'a' }
 // console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
 
 // Here was my unsuccessful commented out code, and I applied the same solution
-// from the last function on the page to it for it to give the correct result
+// from the last function on the page for it to give the correct result
 
 // let onlyUnique = (someArray) => {
 //   let set = new Set();
@@ -212,7 +212,7 @@ Set(1) { 'a' }
 // console.log(onlyUnique([1, 1, 2, 3, 3, 4, 4, 4, 5])); // [2, 5]
 // output: [ 2, 5 ]
 
-// A quick try with reduce and splice, not successfult
+// A quick try with reduce and splice, not successfull
 // let onlyUnique = (someArray) => {
 //   someArray.reduce((previous, current) => {
 //     if (previous === current) {

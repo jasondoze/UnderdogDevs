@@ -13,6 +13,8 @@
 // if the numbers are even push to even
 // else push to odd
 // add the odd to the even array
+
+
 const splitByOddAndEven = (someArray) => {
   // create a no duplicates array
   let noDupes = [];

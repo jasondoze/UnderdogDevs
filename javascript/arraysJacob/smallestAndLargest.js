@@ -16,5 +16,6 @@ const findSmallestAndLargestNumbers = (someArray) => {
 console.log(findSmallestAndLargestNumbers([14, 28, 3, 8, 2])); // solution provided: 2, 28
 
 
-//What is the return value of findSmallestAndLargestNumbers([14, 28, 3, 8, 2])
+//What is the return value of findSmallestAndLargestNumbers([14, 28, 3, 8, 2]) 2, 28
+
 // my changed solution to return an array containing those numbers: [2, 28]
