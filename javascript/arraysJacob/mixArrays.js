@@ -58,7 +58,7 @@ Add the last (M-N) elements of the longest array.
       I need to iterate over it in the loop and call its index or iteration somehow. I was looking 
       for information on this but I could'nt find what I was looking for. My question is, how does a loop
       know to iterate over the arrays or any input, if I dont specify iterating over them in the loop?
-      This is a huge gap for me obviously lol.
+      
   */
 
 // Here I am iterating up to the shortest array,
