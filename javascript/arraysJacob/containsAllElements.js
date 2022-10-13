@@ -10,21 +10,6 @@
 // The includes() method determines whether an array includes a certain value among its
 // entries, returning true or false as appropriate.
 
-const containsAllElements = (firstArray, secondArray) => {
-  // iterate over the array
-  for (let i = 0; i < secondArray.length; i++) {
-    // console.log(firstArray, secondArray[i]);
-    // if the days in the array have the day in the second array
-    return firstArray.includes(secondArray[i]);
-  }
-};
-
-// console.log(containsAllElements(['monday', 'tuesday'], ['tuesday'])); // solution provided: true
-console.log(
-  containsAllElements(['monday', 'tuesday'], ['tuesday', 'wednesday'])
-); // false
-
-
 
 const containsAllElements2 = (firstArray, secondArray) => {
   // iterate over the array
