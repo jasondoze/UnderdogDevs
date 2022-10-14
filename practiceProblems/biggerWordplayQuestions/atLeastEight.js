@@ -11,6 +11,17 @@
 // console.log(words);
 
 let atLeastEight = (wordArray) => {
-}
+  let countObj = {};
+ 
+  for (let i = 0; i < wordArray.length; i++) {
+    let splitter = wordArray[i].split('');
+    for (let char of splitter) {
+      if (!countObj[char]) {
+        countObj[char] = 1;
+      }
+    }
+  }
+  return countObj;
+};
 
 console.log(atLeastEight(['blunnnnkerrrrs', 'monkkkkkeeeessss']));
