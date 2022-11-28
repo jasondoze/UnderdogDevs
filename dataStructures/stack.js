@@ -1,74 +1,53 @@
+// // https://medium.com/p/eeb33ae4c93c
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class Stack {
   constructor() {
-    this.items = [];
-    this.count = 0;
+    this.first = null;
+    this.last = null;
+    this.length = 0;
   }
+
   // add element to top of stack
-  push(element) {
-    this.items[this.count] = element;
-    console.log(`${element} added to ${this.count}`);
-    this.count += 1;
-    return this.count;
+  push(value) {
+    let newNode = new Node(value);
+    if (this.length === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      let temp = this.first;
+      this.first = newNode;
+      newNode.next = temp;
+    }
+    this.length++;
+    return this.length;
   }
+
   // return and remove top element in stack
   // return undefined if stack is empty
   pop() {
-    if (this.count == 0) return undefined;
-    let deleteItem = this.items[this.count - 1];
-    this.count -= 1;
-    console.log(`${deleteItem} removed`);
-    return deleteItem;
-  }
-  // check top element in stack
-  peek() {
-    console.log(`top element is ${this.items[this.count - 1]}`);
-    return this.items[this.count - 1];
-  }
-  // check if stack is empty
-  isEmpty() {
-    console.log(this.count == 0 ? 'Stack is empty' : "Stack isn't empty");
-    return this.count == 0;
-  }
-  // check size of stack
-  size() {
-    console.log(`${this.count} elements in the stack`);
-    return this.count;
-  }
-  // print elements in stack
-  print() {
-    let str = '';
-    for (let i = 0; i < this.count; i++) {
-      str += this.items[i] + ' ';
+    if (this.length === 0) return null;
+    let removed = this.first;
+    if (this.length === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = removed.next;
     }
-    return str;
-  }
-  // clear the stack
-  clear() {
-    this.items = [];
-    this.count = 0;
-    console.log('Stack cleared...');
-    return stack.clear;
+    this.length--;
+    return removed.value;
   }
 }
-const stack = new Stack();
-stack.isEmpty();
+let stack = new Stack();
 
-stack.push(100);
-stack.push(200);
-
-stack.peek();
-
-stack.push(300);
-
-console.log(stack.print());
+stack.push('google');
+stack.push('medium');
+stack.push('youtube');
 
 stack.pop();
-stack.pop();
-
-stack.clear();
-
-console.log(stack.print());
-
-stack.size();
-
-stack.isEmpty();
