@@ -26,3 +26,18 @@ let isFullAge = (age) => {
 
 let isOfAge = getResultArray(ages, isFullAge);
 console.log(isOfAge);
+
+console.log('-----------------------------');
+const map = (func, array) => {
+  const result = new Array(array.length);
+  for (let i = 0; i < array.length; i++) {
+    result[i] = func(array[i]);
+  }
+  return result;
+};
+const func = (x) => {
+  return x * x * x;
+};
+const numbers = [0, 1, 2, 5, 10];
+const cube = map(func, numbers);
+console.log(cube);
