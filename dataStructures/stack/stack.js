@@ -51,3 +51,4 @@ stack.push('medium');
 stack.push('youtube');
 
 stack.pop();
+console.log(stack);

@@ -10,7 +10,7 @@ A queue (pronounced like the letter "q") is like a line at the grocery store. Th
 Insert a new element at the end of the queue, which is called enqueue.
 Remove an element from the front of the queue, which is called dequeue.
 
-![image](images/queue.jpeg)
+![image](queue.jpeg)
 
 <br>
 

@@ -1,0 +1,38 @@
+# Trees, Binary Trees, and Binary Search Trees
+
+is a data structure that consists of nodes with a parent and child relationship. Every tree can have only one root node (which is the uppermost node). Each node can have any number of child nodes. Keep in mind however that each node can only have one parent node (except for the root node which will not have a parent node). In the image below, the node with a value of 2 is our root node. 2 has two children, 7 and 5. 7 has three children: 2, 10, and 6, etc.
+
+<br>
+
+![tree](tree.webp)
+
+<br>
+
+## Binary Trees:
+are a type of tree where each node can have at most two child nodes. In the image below, you can see that each node has either 0, 1, or 2 child nodes.
+
+![binaryTree](binaryTree.webp)
+
+<br>
+
+## Binary Search Trees
+Binary Search Trees are a type of Binary Tree that has sorted data. These can be useful for searching or insertion. The rule for Binary Search Trees is that for each parent node, every value on the left side must be less than the parent, and every value on the right side must be greater than the parent. In the image below, we can see that 8 (our root node) has two children, 3 and 10. On the left side, 3 is less than 8, and on the right side, 10 is greater than 8. We can then look at each node and do the same check going down the tree.
+
+![binarySearchTree](binarySearchTree.png)
+
+<br>
+
+For Binary Search Trees, keep in mind that every value to the left must be less than the parent, and every value to the right must be greater than the parent. For example, in the image above, if we changed the node with a value of 7 to 9, this would not be a valid Binary Search Tree, because 9 would be greater than 8. Remember, every node value on the left side of 8 must be less than 8, and every node value on the right side must be greater than 8.
+
+<br>
+
+[Tree Video](https://www.youtube.com/watch?v=qYiBx2pomlQ)  
+
+[Tree Article](https://en.wikipedia.org/wiki/Tree_(data_structure))
+
+Test your understanding by implementing a basic binary search tree [here](https://javascript.plainenglish.io/tree-traversal-with-javascript-29b57d61d486). Or [here](https://www.youtube.com/watch?v=K7VnBuOlCI8)
+
+More practice is available at the following sites:
+    - [Leetcode](https://leetcode.com/tag/tree/)
+
+# Binary Search Trees with JavaScript
