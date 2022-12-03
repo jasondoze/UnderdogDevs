@@ -5,7 +5,7 @@ You can think of a stack like a stack of books or a stack of cards. You put (the
 
 Considered as a linear data structure, or more abstractly a sequential collection, the push and pop operations occur only at one end of the structure, referred to as the top of the stack. This data structure makes it possible to implement a stack as a singly linked list and as a pointer to the top element. A stack may be implemented to have a bounded capacity. If the stack is full and does not contain enough space to accept another element, the stack is in a state of stack overflow.
 
-![stack](images/pictorial-representation-of-stack.png)
+![stack](stack.png)
 
 <br>
 

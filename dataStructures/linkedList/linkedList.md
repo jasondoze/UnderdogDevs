@@ -7,7 +7,7 @@ A linked list is sort of like a treasure hunt where you get a clue that tells yo
     4. get the fourth node from the latest one  
     5. finally you can get the value from the fourth node.
 
-![linked list](images/linkedList.png)
+![linked list](linkedList.png)
 
 <br>
 

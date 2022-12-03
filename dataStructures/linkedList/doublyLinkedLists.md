@@ -8,7 +8,7 @@ A Doubly Linked List is very similar to a Singly Linked List; it is a data struc
 ### **null <- 0 -> <- 0 -> <- 0 -> <- 0 -> <- 0 -> null**
 The one difference between a Doubly Linked List and a Singly Linked List is that each node in a Doubly Linked List has pointers to both the next and previous values compared to nodes in a Singly Linked List which only have a pointer to the next value. To set up a Doubly Linked List class, it will be exactly the same as a Singly Linked List. The code below sets up a class for Nodes and a class for the Doubly Linked List.
 
-![doublyLinked](images/doublyLinkedList.webp)
+![doublyLinked](doublyLinkedList.webp)
 
 <br>
 
