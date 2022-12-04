@@ -44,3 +44,10 @@ const countDowner = (num) => {
   }
 };
 countDowner(7);
+
+console.log('------------------');
+
+function printReverse(string) {
+  if(!string) return;
+  printReverse(string + 1)
+}
