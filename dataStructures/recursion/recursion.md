@@ -1,15 +1,21 @@
-# Recursion
+# Principle of Recursion
 
-Recursion is when a function calls itself. 
+Recursion is an approach to solving problems using a function that calls itself as a subroutine.
 
-You need to make sure you have a **base case**. The base case, or halting case, of a function is the problem that we know the answer to, that can be solved without any more recursive calls. The base case is what stops the recursion from continuing on forever. Every recursive function must have at least one base case (many functions have more than one). If it doesn't, your function will not work correctly most of the time, and will most likely cause your program to crash in many situations, definitely not a desired effect.
+You might wonder how we can implement a function that calls itself. The trick is that each time a recursive function calls itself, it reduces the given problem into subproblems. The recursion call continues until it reaches a point where the subproblem can be solved without further recursion.
+
+A recursive function should have the following properties so that it does not result in an infinite loop:
+
+A simple base case (or cases) — a terminating scenario that does not use recursion to produce an answer.
+A set of rules, also known as recurrence relation that reduces all other cases towards the base case.
+Note that there could be multiple places where the function may call itself.
 
 
 [Recursion Video](https://www.youtube.com/watch?v=6oDQaB2one8)
 
 <br>
 
-![recursion](images/recursion.jpg)
+![recursion](recursion.jpg)
 
 <br>
 
@@ -21,9 +27,27 @@ And now that you have a basic idea of recursion, you should practice a few diffe
 
 ## Note
 Still struggling with recursion? Here's a tip. Any time you write a recursive function add a "spacing" parameter that is of type String. Give this parameter a default value of an empty string, "". Print the data you are working with at the beginning of the function, but make sure you put the spacing string at the front of the print statement. Before you call the function inside of itself, add two spaces to the spacing and pass that through. This way, as you move deeper and deeper into the recursive calls you will be able to track how deep you are, and what the state of the data is at that point.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```swift
-func recursiveFunction(data: Int, spacing: String = "") {
-    if data < 5 {
+function recursiveFunction(data, "") {
+    if (data < 5) {
         print("\(spacing)\(data) Base case.")
         return
     }
@@ -32,7 +56,7 @@ func recursiveFunction(data: Int, spacing: String = "") {
     print("\(spacing)\(data) Other stuff happens.")
 }
 
-recursiveFunction(data: 10)
+recursiveFunction(data, 10)
 ```
 
 This will print the output below:  
