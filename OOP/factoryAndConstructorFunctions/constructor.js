@@ -1,36 +1,3 @@
-// object literal
-// if an object have one or more methods, its said to have behavior
-const circlez = {
-  radius: 1,
-  location: {
-    x: 1,
-    y: 1,
-  },
-  draw: function () {
-    console.log('draw');
-  },
-};
-
-circlez.draw();
-// circle.constructor
-// ƒ Object() { [native code] }
-
-console.log('---------------------');
-
-// factory function
-function createCircle(radius) {
-  // if key and value are the same, we can remove the value
-  return {
-    radius,
-    draw: function () {
-      console.log('drawz');
-    },
-  };
-}
-
-const circle = createCircle(1);
-circle.draw();
-
 // constructor function
 function Circle(radius) {
   console.log('this', this);
