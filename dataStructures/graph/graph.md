@@ -72,8 +72,14 @@ The most common graph operations are:
 
 
 ## Breadth first traversal
+* Traverses broad into the data structure by visiting neighbor nodes before children nodes
+
+* Uses a queue data structure
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif"/>
+
+### Code example
+![BFS](breadthfFirstTraversal.png)
 
 <br>
 
@@ -82,6 +88,8 @@ The most common graph operations are:
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif"/>
 
 <br>
+
+
  
 [Graph Video (17 m)](https://www.youtube.com/watch?v=gXgEDyodOJU)  
 [Graph Article](https://www.programiz.com/dsa/graph)
