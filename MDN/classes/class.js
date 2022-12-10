@@ -86,3 +86,5 @@ redz.setRed(0);
 
 console.log(redz.getRed());
 // 0; of course, it should be called "black" at this stage!
+
+

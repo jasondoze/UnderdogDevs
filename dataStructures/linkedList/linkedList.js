@@ -7,7 +7,6 @@ class Node {
   }
 }
 /*
-
 define a singly-linked list class. It will have a pointer to the head, a pointer to the tail, and a length. The length will be initialized as 0, and the head and tail will be null. In the next sections, we will add methods to this class to handle different functions. Each method has some edge cases (e.g. if the length is 0, etc.), so please see the code to check for different cases.
 */
 
