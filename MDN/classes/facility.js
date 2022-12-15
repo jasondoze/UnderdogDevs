@@ -11,9 +11,9 @@ class GrowShow {
   }
 }
 
-class Staff extends GrowShow {
-  constructor(location, teamMembers) {
-    super(location);
+class Staff {
+  constructor(growshow, teamMembers) {
+    this.growshow = growshow;
 
     this.teamMembers = teamMembers;
   }
@@ -29,6 +29,11 @@ const grow1 = new GrowShow('AZ', 8500);
 console.log(grow1.getLocale());
 console.log(grow1.getSquareFt());
 
-const worker1 = new Staff('OK', ['Ronin', 'Jimbo']);
+const worker1 = new Staff(new GrowShow('OK'), ['Ronin', 'Jimbo']);
+console.log(worker1);
 worker1.addMembers('Forest');
+console.log(worker1.growshow.location);
+console.log(worker1.getGrowTeam());
+worker1.addMembers('Chewy');
+console.log(worker1.growshow.location);
 console.log(worker1.getGrowTeam());
