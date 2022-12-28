@@ -1,8 +1,8 @@
 const assert = require("assert");
 
-// const fs = require("fs");
-// const text = fs.readFileSync("countries.txt");
-// const allCountries = text.toString().toLowerCase().split("\n");
+const fs = require("fs");
+const text = fs.readFileSync("countries.txt");
+const allCountries = text.toString().toLowerCase().split("\n");
 
 // check if a country name contains another country name
 
@@ -18,7 +18,7 @@ function countryWithinCountry(countries) {
   });
   return countryInsideCountry;
 }
-// console.log(countryWithinCountry(allCountries));
+ console.log(countryWithinCountry(allCountries));
 
 function testCountries() {
   assert.deepEqual([], []);
