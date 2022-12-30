@@ -4,12 +4,14 @@ const words = require('fs')
   .toLowerCase()
   .split('\n');
 
-// What are all of the words containing a Q but not a U?
+// How many words contain the substring "TYPE”?
+
 const contains = (array) => {
-  array.filter((word) => {
-    if (word.includes('q') && !word.includes('u')) {
+  let target = /type/g;
+  for (const word of array) {
+    if (word.match(target)) {
       console.log(word);
     }
-  });
+  }
 };
 contains(words);
