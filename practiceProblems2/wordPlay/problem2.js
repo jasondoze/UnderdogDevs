@@ -1,5 +1,5 @@
 const words = require('fs')
-  .readFileSync('sowpods.txt')
+  .readFileSync('..sowpods.txt')
   .toString()
   .toLowerCase()
   .split('\n');
