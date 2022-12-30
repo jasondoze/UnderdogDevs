@@ -14,17 +14,35 @@ Return k after placing the final result in the first k slots of nums.
 Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 */
 
-let removeDuplicates = (nums) => {
-  let index = 1;
-  for (let i = 0; i < nums.length - 1; i++) {
-    if (nums[i] !== nums[i + 1]) {
-      nums[index] = nums[i + 1];
-      index++;
+// let removeDuplicates = (nums) => {
+//   let index = 1;
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     if (nums[i] !== nums[i + 1]) {
+//       nums[index] = nums[i + 1];
+//       index++;
+//     }
+//   }
+
+//   return index;
+// };
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// Input: nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// Output: 5, (nums = [0, 1, 2, 3, 4, _, _, _, _, _]);
+
+
+const removeD = (array) => {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let char = array[i];
+    if (!result.includes(char)) {
+      result.push(char);
     }
   }
-
-  return index;
+  return result;
 };
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
-// Input: nums = [0,0,1,1,1,2,2,3,3,4]
-// Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+console.log(removeD([0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5]));
+
+const removeDs = (array) => {
+  return [...new Set(array)];
+};
+console.log(removeDs([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
