@@ -6,16 +6,10 @@ const words = require('fs')
 
 // What are all of the words that have all 5 vowels, in any order?
 const allVowels = (array) => {
-  array.filter((word) => {
-    if (
-      word.includes('a') &&
-      word.includes('e') &&
-      word.includes('i') &&
-      word.includes('o') &&
-      word.includes('u')
-    ) {
+  let vowels = /(?=.*a)(?=.*e)(?=.*i)(?=.*o)(?=.*u)[a-z]*/g;
+  for (const word of array)
+    if (word.match(vowels)) {
       console.log(word);
     }
-  });
 };
 allVowels(words);

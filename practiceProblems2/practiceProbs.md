@@ -1,4 +1,5 @@
-Wordplay
+# Wordplay
+For loops and if conditions
 What are all of the words containing UU?
 What are all of the words containing an X and a Y and a Z?
 What are all of the words containing a Q but not a U?
@@ -20,6 +21,8 @@ Which of the letters Q, X, and Z is the least common?
 What is the longest palindrome?
 What are all of the letters that never appear consecutively in an English word? For example, we know that “U” isn’t an answer, because of the word VACUUM, and we know that “A” isn’t an answer, because of “AARDVARK”, but which letters never appear consecutively?
 
+
+# Countries
 For loops and if conditions
 
 What are all of the countries that have “United” in the name?
@@ -32,6 +35,9 @@ What is the shortest country name? Make sure your solution can handle ties.
 What countries use only one vowel in their name (the vowel can be used multiple times)
     - For example, if the word “BEEKEEPER” were a country, it would be an answer, because it only uses “E”.
 There is at least one country name that contains another country name. Find all of these cases.
+
+
+# Baby Names
 
 More for loops, if conditions, and storage
 
