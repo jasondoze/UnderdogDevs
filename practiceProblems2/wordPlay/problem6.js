@@ -13,3 +13,18 @@ const contains = (array) => {
   });
 };
 contains(words);
+console.log(performance.now());
+// 126.33909201622009
+
+const contains2 = (array) => {
+  return array.filter(
+    (word) =>
+      word.includes('b') &&
+      word.includes('b') &&
+      word.includes('x') &&
+      word.length < 5
+  );
+};
+console.log(contains2(words));
+console.log(performance.now());
+// 127.25416004657745
