@@ -71,14 +71,37 @@ What are the shortest words that start with “PRO” and end in “ING”? Make
 What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated.
 
 What is the longest word that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated. Make sure your solution can handle ties.
+
 What are all of the words that can be made without the letters in “AEIOSHRTN” (in other words, without the most common letters)?
+
 What is the longest word that can be made without the letters in “AEIOSHRTN” (in other words, without the most common letters)? Make sure your solution can handle ties.
 
 Functions
 
 Write a function that takes a string `substring` as an argument and returns an array of all of the words that contain that substring (the substring can appear anywhere in the word).
+
 Write a function that takes a string `prefix` as an argument and returns an array of all of the words that start with that prefix (the prefix has to be at the beginning of the word).
+
 Write a function that takes a string `prefix` as the first argument, a string `suffix` as the second argument, and an integer `length` as the third argument. It should return an array of all of the words that start with that prefix, end with that suffix, and are that length.
+
 Write a function that takes a string `word` as an argument and returns a count of all of the “A”s in that string.
+
 Write a function that takes a string `word` as the first argument, a string `letter` as the second argument, and returns a count of how many times `letter` occurs in `word`.
+
 Write a function that takes a string `phrase` and returns a dictionary contains counts of how many times every character appears in `phrase`.
+
+# NBA Finals
+
+Dictionaries
+
+Read the NBA finals CSV data into one more more data structures as needed to complete the following:
+
+Write a function that takes as an argument a year and returns the winner of the NBA finals that year.
+
+Write a function that takes as an argument a team name and returns an array of all of the years the team has won the NBA finals.
+
+Which teams have made it to the NBA finals but have never won?
+Print out a ranking of who has won the MVP more than once, by times won, e.g. this output:
+    - 6 times: Michael Jordan
+    - 3 times: Shaquille O'Neal, LeBron James
+    - 2 times: <etc>

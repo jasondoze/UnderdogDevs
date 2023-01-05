@@ -3,10 +3,10 @@
 import assert from 'assert';
 import { parse } from 'csv-parse/sync';
 import fs from 'fs';
-const nbaFinalsArray = fs.readFileSync('nbaFinals.csv').toString();
+const nbaFinalsArray = fs.readFileSync('./jason-csv-parser.js').toString();
 const nbaFinalsObject = parse(nbaFinalsArray);
 
-console.log(nbaFinalsObject);
+
 
 const input = `
 "key_1","key_2"
@@ -26,3 +26,4 @@ function parseMVP(s) {
   });
 }
 console.log(parseMVP(input));
+console.log(nbaFinalsObject);
