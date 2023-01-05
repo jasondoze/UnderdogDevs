@@ -7,9 +7,12 @@ const words = require('fs')
 // What are all of the words that can be made from only the letters in “RSTLNE”? Not all of those letters need to be used, and letters can be repeated.
 
 const rstlne = (array) => {
-  return array.filter((element) =>
-    element.match(/(?=.*r)(?=.*s)(?=.*t)(?=.*l)(?=.*n)(?=.*e)[a-z]*/g)
-  );
+  for (const word of array) {
+    // tried /^[^rstlne]*$/ also
+    if (word.match(/^[rstlne]+$/g)) {
+      console.log(word);
+    }
+  }
 };
-console.log(rstlne(words));
+rstlne(words);
 

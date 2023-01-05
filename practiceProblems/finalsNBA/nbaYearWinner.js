@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs'
 const nbaFinalsArray = fs
   .readFileSync('nbaFinals.csv')
   .toString()
