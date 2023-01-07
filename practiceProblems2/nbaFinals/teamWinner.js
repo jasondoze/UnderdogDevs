@@ -20,3 +20,10 @@ const teamWinner = (array, teamName) => {
   return winner;
 };
 console.log(teamWinner(nbaFinalsArray, 'CHICAGO BULLS'));
+
+const teamWinner2 = (array, teamName) => {
+  return array
+    .filter((team) => team.split(',')[1] === teamName)
+    .map((year) => year.split(',')[0]);
+};
+console.log(teamWinner2(nbaFinalsArray, 'CHICAGO BULLS'));

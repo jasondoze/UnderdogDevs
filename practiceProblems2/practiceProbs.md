@@ -21,8 +21,10 @@ Which of the letters Q, X, and Z is the least common?
 What is the longest palindrome?
 What are all of the letters that never appear consecutively in an English word? For example, we know that “U” isn’t an answer, because of the word VACUUM, and we know that “A” isn’t an answer, because of “AARDVARK”, but which letters never appear consecutively?
 
+<br>
 
 # Countries
+
 For loops and if conditions
 
 What are all of the countries that have “United” in the name?
@@ -36,6 +38,7 @@ What countries use only one vowel in their name (the vowel can be used multiple 
     - For example, if the word “BEEKEEPER” were a country, it would be an answer, because it only uses “E”.
 There is at least one country name that contains another country name. Find all of these cases.
 
+<br>
 
 # Baby Names
 
@@ -49,6 +52,8 @@ Nested for loops
 There is at least one baby name from the top 40 baby names for 2020 that, when spelled backwards, is a valid Scrabble word. Find and print all such names.
     Solve this two ways: first with an array to hold the Scrabble words, and then with a dictionary (or set) to hold the Scrabble words. Use timer functions to measure how long it takes to complete this work under each implementation. Why is the time different?
 What are all of the names that were top 40 baby names in both 1880 and 2020?
+
+<br>
 
 # More Wordplay questions
 
@@ -90,6 +95,8 @@ Write a function that takes a string `word` as the first argument, a string `let
 
 Write a function that takes a string `phrase` and returns a dictionary contains counts of how many times every character appears in `phrase`.
 
+<br>
+
 # NBA Finals
 
 Dictionaries
@@ -105,3 +112,18 @@ Print out a ranking of who has won the MVP more than once, by times won, e.g. th
     - 6 times: Michael Jordan
     - 3 times: Shaquille O'Neal, LeBron James
     - 2 times: <etc>
+
+<br>
+
+# Top Movies
+
+
+What movies on this list were distributed by DreamWorks?
+
+What is the highest grossing movie from Universal Pictures, domestically?
+
+What distributor has the most films on this list?                                
+
+What is the earliest year on this list, and what were the films from that year?
+
+What is the distribution of ratings? (How many are PG, PG-13, R, etc.?)  

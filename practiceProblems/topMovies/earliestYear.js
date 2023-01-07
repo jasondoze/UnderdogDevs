@@ -1,4 +1,4 @@
-import { timeLog } from 'console';
+
 import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 const movies = fs.readFileSync('top_movies.csv').toString();
