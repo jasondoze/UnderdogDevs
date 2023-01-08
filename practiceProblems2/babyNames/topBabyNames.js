@@ -21,12 +21,9 @@ console.log(performance.now());
 
 const allBabyNames = (oldNames, newNames) => {
   let newBabies = new Set(newNames);
-  for (const names of oldNames) {
-    if (newBabies.has(names)) {
-      console.log(names);
-    }
-  }
+  const filtered = oldNames.filter((names) => newBabies.has(names));
+  return filtered;
 };
-allBabyNames(babyNames1880, babyNames2020);
+console.log(allBabyNames(babyNames1880, babyNames2020));
 console.log(performance.now());
 // 71.48907697200775

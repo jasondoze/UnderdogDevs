@@ -17,13 +17,7 @@ Overall, this regular expression will match a string that contains the letters '
 */
 
 const all5 = (array) => {
-  const allVowels =
-  /a[^eiou]*e[^aiou]*i[^aeou]*o[^aeio]*u/
-  for (const word of array) {
-    if (word.match(allVowels)) {
-      console.log(word);
-    }
-  }
+  const allVowels = /a[^eiou]*e[^aiou]*i[^aeou]*o[^aeio]*u/g;
+  return array.filter((word) => word.match(allVowels));
 };
-
-all5(words);
+console.log(all5(words));

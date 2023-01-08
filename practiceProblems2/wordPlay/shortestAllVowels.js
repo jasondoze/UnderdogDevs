@@ -7,9 +7,9 @@ const words = require('fs')
 // What is the shortest word that contains all 5 vowels?
 
 const contains = (array) => {
-  let filterd = array.filter((element) =>
+  let filtered = array.filter((element) =>
     element.match(/(?=.*a)(?=.*e)(?=.*i)(?=.*o)(?=.*u)[a-z]*/g)
   );
-  return filterd.reduce((a, b) => (a.length <= b.length ? a : b));
+  return filtered.reduce((a, b) => (a.length <= b.length ? a : b));
 };
 console.log(contains(words));
