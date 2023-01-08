@@ -7,10 +7,6 @@ const words = require('fs')
 // What are all of the words containing UU?
 
 const doubleU = (array) => {
-  array.filter((word) => {
-    if (word.includes('uu')) {
-      console.log(word);
-    }
-  });
+  return array.filter((word) => word.includes('uu'));
 };
-doubleU(words);
+console.log(doubleU(words));

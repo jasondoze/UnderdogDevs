@@ -6,10 +6,6 @@ const words = require('fs')
 
 // What are all of the words that both start and end with a Y?
 const contains = (array) => {
-  for (const word of array) {
-    if (word.startsWith('y') && word.endsWith('y')) {
-      console.log(word);
-    }
-  }
+  return array.filter((word) => word.startsWith('y') && word.endsWith('y'));
 };
-contains(words);
+console.log(contains(words));

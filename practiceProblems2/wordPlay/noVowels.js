@@ -8,10 +8,7 @@ const words = require('fs')
 
 const noVowel = (array) => {
   const vowels = /[aeiouy]/g;
-  for (const word of array) {
-    if (!word.match(vowels)) {
-      console.log(word);
-    }
-  }
+  return array.filter((word) => !word.match(vowels));
 };
-noVowel(words);
+
+console.log(noVowel(words));

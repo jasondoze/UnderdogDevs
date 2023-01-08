@@ -8,33 +8,15 @@ const topMovies = fs
 // Title,Distributor,Release Date,US Sales,World Sales,Runtime,Rating
 // What distributor has the most films on this list?
 
-// const mostFilms = (array) => {
-//   let movie = [];
-//   for (let i = 1; i < array.length; i++) {
-//     const [title, distributor] = array[i].split(',');
-//     movie.push({ title, distributor });
-//   }
-//   let distributorCounts = movie.reduce((counts, m) => {
-//     counts[m.distributor] = (counts[m.distributor] || 0) + 1;
-//     return counts;
-//   }, {});
-
-//   let mostFilms = Object.keys(distributorCounts).reduce((a, b) => {
-//     return distributorCounts[a] > distributorCounts[b] ? a : b;
-//   });
-//   return mostFilms;
-// };
-// console.log(mostFilms(topMovies));
-
 const mostFilms = (array) => {
-
   // We create a new object to store the counts of films for each distributor.
   // The reduce function iterates through the elements in the array (excluding the first element, which is the column names).
-  let distributorCounts = array.slice(1).reduce((counts, movie) => {
-    // For each movie, we split the string by the comma to get the title and distributor, and store the latter in a variable.
-    const [title, distributor] = movie.split(',');
+  let distributorCounts = array.slice(1).reduce((counts, row) => {
+    // For each row, we split the string by the comma to get the title and distributor, and store the latter in a variable.
+    const [title, distributor] = row.split(',');
     // Then, we increment the count for the distributor in the counts object by 1.
     counts[distributor] = (counts[distributor] || 0) + 1;
+    // counts[distributor] = (counts[distributor] ??= 0) + 1;
     return counts;
   }, {});
 

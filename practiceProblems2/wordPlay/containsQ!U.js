@@ -6,10 +6,6 @@ const words = require('fs')
 
 // What are all of the words containing a Q but not a U?
 const contains = (array) => {
-  array.filter((word) => {
-    if (word.includes('q') && !word.includes('u')) {
-      console.log(word);
-    }
-  });
+  return array.filter((word) => word.includes('q') && !word.includes('u'));
 };
-contains(words);
+console.log(contains(words));

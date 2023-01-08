@@ -6,11 +6,7 @@ const words = require('fs')
 
 // What are all of the words containing an X and a Y and a Z?
 
-const containsXYZ = (array) => {
-  array.filter((word) => {
-    if (word.match(/(?=.*x)(?=.*y)(?=.*z)/g)) {
-      console.log(word);
-    }
-  });
+const containsXYZv = (array) => {
+  return array.filter((word) => word.match(/(?=.*x)(?=.*y)(?=.*z)/g));
 };
-containsXYZ(words);
+console.log(containsXYZv(words));

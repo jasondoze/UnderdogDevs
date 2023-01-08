@@ -25,21 +25,16 @@ const babyScrabble = (babyNames, scrabble) => {
 };
 
 babyScrabble(babyNames2020, scrabbleWords);
-console.log(performance.now());
-2947.3370970487595
+console.log(Math.round(performance.now())); // 3006
 
 const babyScrabble2 = (babyNames, scrabble) => {
-  let allWords = new Set(scrabble);
-  for (const names of babyNames) {
-    let reversed = names.split('').reverse().join('');
-    if (allWords.has(reversed)) {
-      console.log(names);
-    }
-  }
+  let scrabbleWords = new Set(scrabble);
+  return babyNames.filter((names) =>
+    scrabbleWords.has(names.split('').reverse().join(''))
+  );
 };
-babyScrabble2(babyNames2020, scrabbleWords);
-console.log(performance.now());
-// 227.56904995441437
+console.log(babyScrabble2(babyNames2020, scrabbleWords));
+console.log(Math.round(performance.now())); // 228
 
 /* 
 The time difference between the two functions is because the second function has a more efficient algorithm.

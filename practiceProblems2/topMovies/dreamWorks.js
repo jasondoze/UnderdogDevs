@@ -6,29 +6,32 @@ const topMovies = fs
   .split('\r\n');
 
 // What movies on this list were distributed by DreamWorks?
+// Title,Distributor,Release Date,US Sales,World Sales,Runtime,Rating
 
-const dreamWorks = (array) => {
-  const dreamWorksMovies = {};
-  for (let i = 0; i < array.length; i++) {
-    let columns = array[i].split(',');
-    let distributor = columns[1];
-    let title = columns[0];
-    if (distributor === 'DREAMWORKS' || distributor === 'DREAMWORKS DISTRIBUTION' && !dreamWorksMovies[distributor]) {
-      dreamWorksMovies[title] = distributor;
+const dreamWorkz = (array) => {
+  for (const rows of array.slice(1)) {
+    const [title, distributor] = rows.split(',');
+    if (
+      distributor === 'DREAMWORKS' ||
+      distributor === 'DREAMWORKS DISTRIBUTION'
+    ) {
+      console.log(title);
     }
   }
-  return Object.keys(dreamWorksMovies);
 };
-console.log(dreamWorks(topMovies));
+dreamWorkz(topMovies);
 
-
-const dreamWorks2 = (array) => {
-  // Filter the array of movies based on the condition that the movie must have either "DREAMWORKS" or "DREAMWORKS DISTRIBUTION" as its distributor
-  return array
-    .filter(row => row.split(',')[1] === 'DREAMWORKS' || row.split(',')[1] === 'DREAMWORKS DISTRIBUTION')
-    // Extract the movie titles from the remaining rows in the array
-    .map(row => row.split(',')[0]);
+const dreamWorkZ = (array) => {
+  let dreamerMovies = {};
+  for (const rows of array.slice(1)) {
+    const [title, distributor] = rows.split(',');
+    if (
+      distributor === 'DREAMWORKS' ||
+      (distributor === 'DREAMWORKS DISTRIBUTION' && !dreamerMovies[title])
+    ) {
+      dreamerMovies[title] = distributor;
+    }
+  }
+  return Object.keys(dreamerMovies);
 };
-
-// Log the array of movie titles returned by the dreamWorks function
-console.log(dreamWorks2(topMovies));
+console.log(dreamWorkZ(topMovies));

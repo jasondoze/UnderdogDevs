@@ -9,8 +9,8 @@ const words = require('fs')
 const palindrome = (array) => {
   return array
     .filter((word) => word === word.split('').reverse().join(''))
-    .reduce((longest, word) => (word.length > longest.length ? word : longest), "");
+    .reduce((longest, word) => (word.length > longest.length ? word : longest), '');
 };
 
-console.log(palindrome(words));
+console.log(palindrome(words)); // rotavator
 console.log(performance.now());
