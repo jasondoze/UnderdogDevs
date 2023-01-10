@@ -21,17 +21,17 @@ const dreamWorkz = (array) => {
 };
 dreamWorkz(topMovies);
 
-const dreamWorkZ = (array) => {
-  let dreamerMovies = {};
-  for (const rows of array.slice(1)) {
+const dreamWork = (array) => {
+  const dreamDistro = array.slice(1).reduce((distObj, rows) => {
     const [title, distributor] = rows.split(',');
     if (
       distributor === 'DREAMWORKS' ||
-      (distributor === 'DREAMWORKS DISTRIBUTION' && !dreamerMovies[title])
+      distributor === 'DREAMWORKS DISTRIBUTION'
     ) {
-      dreamerMovies[title] = distributor;
+      distObj[title] = distributor;
     }
-  }
-  return Object.keys(dreamerMovies);
+    return distObj;
+  }, {});
+  return Object.entries(dreamDistro);
 };
-console.log(dreamWorkZ(topMovies));
+console.log(dreamWork(topMovies));

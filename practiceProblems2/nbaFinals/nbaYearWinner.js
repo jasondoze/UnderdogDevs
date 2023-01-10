@@ -4,36 +4,21 @@ const nbaFinalsArray = fs
   .toString()
   .toUpperCase()
   .split('\r\n');
-// console.log(nbaFinalsArray);
-
+// console.log(nbaFinalsArray)
 // Write a function that takes as an argument a year and returns the winner of the NBA finals that year.
+// Year,Winner,Loser,Score,MVP
 
-// const yearWinner = (array, targetYear) => {
-//   let result = [];
-//   for (const rows of array) {
-//     const columnSplit = rows.split(',');
-//     let year = parseInt(columnSplit[0]);
-//     let team = columnSplit[1];
-//     if (year == targetYear) {
-//       result.push(year);
-//       result.push(team);
-//     }
-//   }
-//   return result;
-// };
-// console.log(yearWinner(nbaFinalsArray, '1998'));
-// console.log(performance.now())
-// 76.43444299697876
-
-const yearWinner2 = (array, targetYear) => {
-  return array
-    .filter((year) => year.split(',')[0] === targetYear)
-    .map((team) => team.split(',')[1]);
+const yearWinner = (array, targetYear) => {
+  // Then, split each item by the comma and take the second part (team name)
+  // Return the modified array
+  return (
+    array
+      //  filter the array to only include items that contain the target year
+      // split each item by the comma and map the second part (team name)
+      .filter((year) => year.split(',')[0] === targetYear)
+      .map((team) => team.split(',')[1])
+  );
 };
-console.log(yearWinner2(nbaFinalsArray, '1998'));
-console.log(performance.now())
+console.log(yearWinner(nbaFinalsArray, '1998'));
+// console.log(performance.now());
 // 75.16609996557236
-
-
-
-
