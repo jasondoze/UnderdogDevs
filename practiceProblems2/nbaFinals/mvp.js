@@ -4,58 +4,61 @@ const nbaFinalsArray = fs
   .toString()
   .toUpperCase()
   .split('\r\n');
-// console.log(nbaFinalsArray);
 
 // Print out a ranking of who has won the MVP more than once, by times won, e.g. this output:
 //     - 6 times: Michael Jordan
 //     - 3 times: Shaquille O'Neal, LeBron James
 //     - 2 times: <etc></etc>
 // Year,Winner,Loser,Score,MVP
-const mostMVP = (array) => {
-  const winners = array.slice(1).reduce((winStats, row) => {
-    const [, , , , mvp] = row.split(',');
-    if (mvp) {
-      if (!winStats[mvp]) {
-        winStats[mvp] = (winStats[mvp] || 0) + 1;
-      }
-    }
-    return winStats;
-  }, {});
-};
-console.log(mostMVP(nbaFinalsArray));
 
-// Define a function called `getResults` that takes in an array called `array`
-const getResults = (array) => {
-  // Initialize an empty object called `mvps`
-  const mvps = {};
-  // Loop through each element in `array` (starting at the second element, as the first element is a header row)
-  for (const row of array.slice(1)) {
-    // Split the string at each comma, and assign the 5th element to a variable called `mvp`
+const getResultz = (array) => {
+  // Initialize an empty object to store the MVP count
+  let winners = {};
+
+  // Use slice() to create a new array from the original array, starting from the second element
+  // Use reduce() to iterate over the new array and create an object named mvpObj that counts how many times a given name appears in the array
+  winners = array.slice(1).reduce((mvpObj, row) => {
+    // Use destructuring assignment to extract the MVP name from the row string
     const [, , , , mvp] = row.split(',');
-    // If `mvp` is truthy (not null or undefined)
+    // If there is an MVP name, add it to the `mvpObj` object
     if (mvp) {
-      // If `mvps` does not have a property with the name of `mvp`, add it and set the value to 0
-      if (!mvps[mvp]) {
-        mvps[mvp] = 0;
-      }
-      // Increment the value of the `mvp` property by 1
-      mvps[mvp]++;
+      // Use the nullish coalescing operator (??) to set the MVP count to 0 if it is not already defined
+      mvpObj[mvp] ??= 0;
+      // Increment the MVP count
+      mvpObj[mvp]++;
     }
-  }
-  // console.log(mvps);
-  // Create an array called `mvpRanking` by getting an array of objects containing the properties and values of `mvps` (using `Object.entries`)
-  const mvpRanking = Object.entries(mvps)
-    // Sort the array in descending order based on the value of each object
+    return mvpObj;
+  }, {});
+  console.log(winners);
+  // Use Object.entries() to convert the `winners` object into an array of [name, count] pairs
+  const mvpRanking = Object.entries(winners)
+    // Use sort() to sort the array in descending order by count
     .sort((a, b) => b[1] - a[1])
-    // Filter the array to only include objects where the value is greater than 1 (using the `filter` method)
-    .filter(([, times]) => times > 1)
-    //  Mapping the array to a new array of strings in the format `${times} times: ${mvp}` (using the `map` method)
+    // Use filter() to remove any [name, count] pairs where count is less than 2\
+    .filter(([_, times]) => times > 1)
+    // Use map() to transform the remaining [name, count] pairs into strings of the form "count: name"
     .map(([mvp, times]) => `${times} times: ${mvp}`);
 
-  // Return an object with a property `mvpRanking` set to the value of the `mvpRanking` array
-  // return { mvpRanking };
-  console.log(mvpRanking);
+  // Return an object with a single property, `mvpRanking`, which is the array of strings we just created
+  return { mvpRanking };
 };
 
-// Log the result of calling the `getResults` function and passing in the `nbaFinalsArray`
-getResults(nbaFinalsArray);
+// Call the `getResultz` function with `nbaFinalsArray` as the argument and log the returned object to the console
+console.log(getResultz(nbaFinalsArray));
+/*
+{
+  mvpRanking: [
+    '6: MICHAEL JORDAN',
+    '3: LEBRON JAMES',
+    '3: TIM DUNCAN',
+    "3: SHAQUILLE O'NEAL",
+    '3: MAGIC JOHNSON',
+    '2: KAWHI LEONARD',
+    '2: KEVIN DURANT',
+    '2: KOBE BRYANT',
+    '2: HAKEEM OLAJUWON',
+    '2: LARRY BIRD',
+    '2: WILLIS REED'
+  ]
+}
+*/
