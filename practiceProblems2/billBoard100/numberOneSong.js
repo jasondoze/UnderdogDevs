@@ -5,7 +5,7 @@ const parseSongs = (inputSongs) => {
   const songsData = fs
     .readFileSync('../billboard100_2000.csv')
     .toString()
-    .toLowerCase();
+    .toUpperCase();
 
   return parse(songsData, {
     columns: true,
@@ -30,9 +30,9 @@ const numberOnez = (array) => {
     ...new Set(
       array
         // Filter the array to only include songs with the 'peak-rank' property set to "1"
-        .filter((song) => song['peak-rank'] === '1')
+        .filter((song) => song['PEAK-RANK'] === '1')
         // Map the filtered array to a new array of strings in the format: "song name - artist"
-        .map((song) => `"${song.song}" - ${song.artist}`)
+        .map((song) => `"${song.SONG}" - ${song.ARTIST}`)
     ),
   ];
 };
@@ -40,12 +40,13 @@ const numberOnez = (array) => {
 // Log the result of calling the numberOnez function on the parsedSongs array,
 // with the resulting array of strings joined together with newline characters
 console.log(numberOnez(parseSongs()).join('\n'));
+console.log(performance.now());
 
 const numberOne = (array) => {
   return array
-    .filter((song) => song['peak-rank'] === '1')
+    .filter((song) => song['PEAK-RANK'] === '1')
     .reduce((artistObj, song) => {
-      artistObj[song.song] = song.artist;
+      artistObj[song.SONG] = song.ARTIST;
       return artistObj;
     }, {});
 };
@@ -53,14 +54,12 @@ console.log(numberOne(parseSongs()));
 
 const numberUno = (array) => {
   let artistObj = {};
-  for (const { song, artist, 'peak-rank': peakRank } of array) {
+  for (const { SONG, ARTIST, 'PEAK-RANK': peakRank } of array) {
     if (peakRank == '1') {
-      artistObj[song] = artist;
+      artistObj[SONG] = ARTIST;
     }
   }
 
   return artistObj;
 };
 console.log(numberUno(parseSongs()));
-
-

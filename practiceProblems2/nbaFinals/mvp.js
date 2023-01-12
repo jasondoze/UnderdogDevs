@@ -12,9 +12,6 @@ const nbaFinalsArray = fs
 // Year,Winner,Loser,Score,MVP
 
 const getResultz = (array) => {
-  // Initialize an empty object to store the MVP count
-  let winners = {};
-
   // Use slice() to create a new array from the original array, starting from the second element
   // Use reduce() to iterate over the new array and create an object named mvpObj that counts how many times a given name appears in the array
   winners = array.slice(1).reduce((mvpObj, row) => {

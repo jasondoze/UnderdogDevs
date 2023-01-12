@@ -36,18 +36,12 @@ function longestRunning1(data) {
   }, {});
   // push the counted songs into an array
   countArr.push(countSongs);
-  // console.log(countArr);
   // get all the counted week numbers in the objects
   let topWeeks = Object.values(countSongs);
-  // console.log(topWeeks);
   // find the largest number in the array
   let maxWeeks = Math.max(...topWeeks);
-  // console.log(maxWeeks);
   for (const obj of countArr) {
-    // console.log(obj);
     for (const strings in obj) {
-      // console.log(strings);
-      // console.log (obj[strings])
       if (obj[strings] === maxWeeks) {
         console.log(`Title: ${strings}; Weeks at the top: ${obj[strings]}`);
       }
