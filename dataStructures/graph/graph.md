@@ -46,7 +46,7 @@ Since it is an undirected graph, for edge (0,2), we also need to mark edge (2,0)
 
 Edge lookup(checking if an edge exists between vertex A and vertex B) is extremely fast in adjacency matrix representation but we have to reserve space for every possible link between all vertices(V x V), so it requires more space.
 
-2. Adjacency List
+### Adjacency List
 An adjacency list represents a graph as an array of linked lists.
 
 The index of the array represents a vertex and each element in its linked list represents the other vertices that form an edge with the vertex.
