@@ -86,8 +86,8 @@ left -> rigth -> data
 
 [Tree Article](https://en.wikipedia.org/wiki/Tree_(data_structure))
 
-Test your understanding by implementing a basic binary search tree [here](https://javascript.plainenglish.io/tree-traversal-with-javascript-29b57d61d486). Or [here](https://www.youtube.com/watch?v=K7VnBuOlCI8)
+Implement a basic binary search tree [here](https://javascript.plainenglish.io/tree-traversal-with-javascript-29b57d61d486). or [here](https://www.youtube.com/watch?v=K7VnBuOlCI8)
 
-More practice is available at the following sites:
+Practice here:
     - [Leetcode](https://leetcode.com/tag/tree/)
 
