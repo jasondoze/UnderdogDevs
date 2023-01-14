@@ -7,7 +7,9 @@ Let us get started with the node representation for the doubly linked list. I wi
 
 ![image](doubly.webp)
 
-<center> *First Node in Doubly Linked List | Morning Habits* </center>  
+
+*<center>First Node in Doubly Linked List | Morning Habits</center>*
+
 
 &nbsp;
 
