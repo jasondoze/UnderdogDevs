@@ -26,5 +26,5 @@ It is not uncommon to be asked to use a linked list in a technical interview. He
     - [Reverse a singly linked list](https://leetcode.com/problems/reverse-linked-list/)  
     - [Remove the nth node from the end of a linked list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
-Now that you've learned and implemented a doubly linked list, can you refactor your stack and queue to use a doubly linked list for storage?
+ Can you refactor your stack and queue to use a doubly linked list for storage?
 
