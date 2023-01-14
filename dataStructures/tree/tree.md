@@ -1,6 +1,6 @@
 # Trees, Binary Trees, and Binary Search Trees
 
-is a data structure that consists of nodes with a parent and child relationship. Every tree can have only one root node (which is the uppermost node). Each node can have any number of child nodes. Keep in mind however that each node can only have one parent node (except for the root node which will not have a parent node). In the image below, the node with a value of 2 is our root node. 2 has two children, 7 and 5. 7 has three children: 2, 10, and 6, etc.
+Tree is a data structure that consists of nodes with a parent and child relationship. Every tree can have only one root node (which is the uppermost node). Each node can have any number of child nodes. Keep in mind however that each node can only have one parent node (except for the root node which will not have a parent node). In the image below, the node with a value of 2 is our root node. 2 has two children, 7 and 5. 7 has three children: 2, 10, and 6, etc.
 
 <br>
 
