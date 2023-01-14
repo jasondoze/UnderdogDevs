@@ -7,7 +7,9 @@ Let us get started with the node representation for the doubly linked list. I wi
 
 ![image](doubly.webp)
 
+
 *<center>First Node in Doubly Linked List | Morning Habits</center>*
+
 
 &nbsp;
 
@@ -41,7 +43,7 @@ const morningRoutine = {
 
 Now let us start with different operations on this linked list.
 
-&nbsp;
+
 
 ## Prepend
 Prepend means adding a node at the start of the linked list.
@@ -91,6 +93,8 @@ Let us add a new routine Brush Teeth after we had water in the morning.
 
 `append('Brush Teeth');`
 
+&nbsp;
+
 ### The steps will be to:
 ---
 
@@ -101,7 +105,7 @@ Let us add a new routine Brush Teeth after we had water in the morning.
 
 ![image](doubly3.webp)
 
-&nbsp;
+
 
 *<center>Append Node `Brush Teeth`</center>*
 
@@ -190,7 +194,10 @@ Let us delete the node Drink Water.
 
 delete('Drink Water', 1);
 
+&nbsp;
+
 ### The steps will be to:
+---
 
 * Traverse to the node that is before the node to be deleted — previousNode.
 * Identify the node after the node to be deleted — nextNode.
