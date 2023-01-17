@@ -1,0 +1,10 @@
+AnimalName,AnimalType,NumLegs,Sound
+Eagle,Bird,2,Caw
+Kangaroo,Mammal,2,Bark
+Ostrich,Bird,2,Boom
+Alligator,Reptile,4,Sssss
+Cheetah,Mammal,4,Purr
+Hedgehog,Mammal,4,Grunt
+Zebra,Mammal,4,Bray
+Octopus,Cephalopod,8,Burble
+Scorpion,Arachnid,8,Hiss
